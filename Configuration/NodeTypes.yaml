@@ -1,0 +1,60 @@
+
+'Sfi.Widgets:Carousel':
+  superTypes:
+    - 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Widgets - Carousel'
+    group: structure
+    inlineEditable: true
+  constraints:
+    nodeTypes:
+      '*': false
+      'TYPO3.Neos.NodeTypes:Text': true
+      'TYPO3.Neos.NodeTypes:Image': true
+
+'Sfi.Widgets:Sections':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Section container'
+    group: structure
+    inlineEditable: true
+  properties:
+    type:
+      defaultValue: 'tabs'
+      type: string
+      ui:
+        label: Section type
+        reloadIfChanged: true
+        inspector:
+          group: structure
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              tabs:
+                label: Tabs->Accordion
+              vertical-tabs:
+                label: 'Vertical Tabs->Accordion'
+              accordion:
+                label: Accordion
+  constraints:
+    nodeTypes:
+      '*': false
+      'Sfi.Widgets:Section': true
+
+'Sfi.Widgets:Section':
+  superTypes:
+    - 'TYPO3.Neos:ContentCollection'
+  ui:
+    label: 'Section'
+    group: structure
+    inlineEditable: true
+    inspector:
+      groups:
+        title:
+          label: 'Section properties'
+          position: 100
+  properties:
+    title:
+      type: string
+      defaultValue: 'One more tab'

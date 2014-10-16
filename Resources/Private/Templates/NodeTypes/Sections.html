@@ -1,0 +1,22 @@
+{namespace ts=TYPO3\TypoScript\ViewHelpers}
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+	<ul class="Sections-Tabs">
+		<ts:render path="menu" />
+	</ul>
+
+	<ts:render path="panels" />
+</div>
+
+
+<f:section name="menuItem">
+
+	<neos:contentElement.wrap node="{node}">
+		<li class="Sections-Tab">
+			<a class="Sections-TabAnchor" href="#{node.name}">
+				<neos:contentElement.editable property="title" />
+			</a>
+		</li>
+	</neos:contentElement.wrap>
+
+</f:section>
