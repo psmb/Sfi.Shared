@@ -5,10 +5,8 @@ prototype(Sfi.Widgets:Carousel) < prototype(TYPO3.Neos:ContentCollection) {
 
 
 prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
-	attributes {
-		class = 'Sections js-sections'
-	}
-
+	sectionName = 'main'
+	layout = ${q(node).property('layout')}
 	menu = TYPO3.TypoScript:Collection
 	menu {
 		collection = ${q(node).children()}
@@ -19,7 +17,7 @@ prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
 	panels = TYPO3.TypoScript:Collection
 	panels {
 		collection = ${q(node).children()}
-		itemRenderer = Sfi.Widgets:Section
+		itemRenderer = Sfi.Widgets:Panel
 		itemName = 'node'
 	}
 }
@@ -29,6 +27,15 @@ prototype(Sfi.Widgets:MenuItem) < prototype(TYPO3.TypoScript:Template) {
 	sectionName = 'menuItem'
 	title = ${q(node).property('title')}
 	node = ${q(node).get(0)}
+}
+
+prototype(Sfi.Widgets:Panel) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
+	sectionName = 'panel'
+	title = ${q(node).property('title')}
+	node = ${q(node).get(0)}
+
+	section = Sfi.Widgets:Section
 }
 
 prototype(Sfi.Widgets:Section) < prototype(TYPO3.Neos:ContentCollection) {

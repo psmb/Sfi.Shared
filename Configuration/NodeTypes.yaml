@@ -20,23 +20,23 @@
     group: structure
     inlineEditable: true
   properties:
-    type:
-      defaultValue: 'tabs'
+    layout:
+      defaultValue: 'Sections--Tabs'
       type: string
       ui:
-        label: Section type
+        label: 'Section layout'
         reloadIfChanged: true
         inspector:
-          group: structure
+          group: visibility
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              tabs:
-                label: Tabs->Accordion
-              vertical-tabs:
-                label: 'Vertical Tabs->Accordion'
-              accordion:
-                label: Accordion
+              'Sections--Tabs':
+                label: 'Tabs'
+              'Sections--VerticalTabs':
+                label: 'Vertical Tabs'
+              'Sections--Pills':
+                label: 'Pills'
   constraints:
     nodeTypes:
       '*': false
