@@ -1,13 +1,11 @@
 include: **/*.ts2
 
-
-
-
 prototype(Sfi.Widgets:Carousel) {
-    attributes.class = ${q(node).property('responsive')?'Carousel js-carousel-responsive':'Carousel js-carousel'}
+    attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
 	content = Sfi.Widgets:ContentCollection
 }
 
+# WIP
 prototype(Sfi.Widgets:Link) {
 	@override.target = ${this.target}
 	target.@process.convertUris = TYPO3.Neos:ConvertUris

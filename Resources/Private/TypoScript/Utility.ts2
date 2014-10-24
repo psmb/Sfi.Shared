@@ -1,3 +1,4 @@
+# Render element with its own object
 prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 	default{
 		condition = ${true}
@@ -5,6 +6,7 @@ prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 	}
 }
 
+# Alternative to ContentCollection. No extra nodes! The only down side: no content handles.
 prototype(Sfi.Widgets:ContentCollection) < prototype(TYPO3.TypoScript:Collection) {
 	collection = ${q(node).children()}
 	itemRenderer = Sfi.Widgets:AutoRender

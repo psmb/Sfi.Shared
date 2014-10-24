@@ -14,12 +14,22 @@
           position: 5
   properties:
     responsive:
-      type: boolean
+      defaultValue: '1x'
+      type: string
       ui:
-        label: 'Responsive? (3x)'
+        label: 'Number of slides on desktop'
         reloadIfChanged: true
         inspector:
           group: carousel
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '1x':
+                label: '1x'
+              '2x':
+                label: '2x'
+              '3x':
+                label: '3x'
 
 'Sfi.Widgets:Sections':
   superTypes:
