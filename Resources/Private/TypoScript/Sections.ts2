@@ -1,0 +1,54 @@
+
+prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
+	sectionName = 'main'
+	layout = ${q(node).property('layout')}
+
+	tabs = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children()}
+		itemRenderer = Sfi.Widgets:SectionsTabRenderer
+		itemName = 'node'
+	}
+
+	panels = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children()}
+		itemRenderer = Sfi.Widgets:SectionsPanelRenderer
+		itemName = 'node'
+	}
+}
+
+
+prototype(Sfi.Widgets:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
+	sectionName = 'to-be-set'
+	
+	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
+	@override.sectionName = ${this.sectionName}
+
+    node = ${q(node).get(0)}
+}
+
+
+prototype(Sfi.Widgets:SectionsTabRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
+	sectionName = 'tab'
+	tab = Sfi.Widgets:AutoRender {
+		@override.section = 'tab'
+	}
+}
+
+prototype(Sfi.Widgets:SectionsPanelRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
+	sectionName = 'panel'
+	accordion = Sfi.Widgets:AutoRender {
+		@override.section = 'accordion'
+	}
+	panel = Sfi.Widgets:AutoRender {
+		@override.section = 'panel'
+	}
+}
+
+
+prototype(Sfi.Widgets:Section) {
+    sectionName = ${section}
+    node = ${q(node).get(0)}
+    @override.theNode = ${this.node}
+
+	content = Sfi.Widgets:ContentCollection
+}

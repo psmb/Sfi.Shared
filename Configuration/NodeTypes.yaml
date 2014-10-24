@@ -1,23 +1,33 @@
 
 'Sfi.Widgets:Carousel':
   superTypes:
-    - 'TYPO3.Neos:ContentCollection'
+    - 'TYPO3.Neos:Content'
   ui:
-    label: 'Widgets - Carousel'
-    group: structure
+    label: 'Carousel'
+    group: contentWidgets
     inlineEditable: true
-  constraints:
-    nodeTypes:
-      '*': false
-      'TYPO3.Neos.NodeTypes:Text': true
-      'TYPO3.Neos.NodeTypes:Image': true
+    icon: 'icon-chevron-right'
+    inspector:
+      groups:
+        carousel:
+          label: Carousel
+          position: 5
+  properties:
+    responsive:
+      type: boolean
+      ui:
+        label: 'Responsive? (3x)'
+        reloadIfChanged: true
+        inspector:
+          group: carousel
 
 'Sfi.Widgets:Sections':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
     label: 'Section container'
-    group: structure
+    icon: 'icon-ellipsis-horizontal'
+    group: contentWidgets
     inlineEditable: true
   properties:
     layout:
@@ -44,10 +54,10 @@
 
 'Sfi.Widgets:Section':
   superTypes:
-    - 'TYPO3.Neos:ContentCollection'
+    - 'TYPO3.Neos:Content'
   ui:
     label: 'Section'
-    group: structure
+    group: contentWidgets
     inlineEditable: true
     inspector:
       groups:
@@ -58,3 +68,46 @@
     title:
       type: string
       defaultValue: 'One more tab'
+
+
+'Sfi.Widgets:Link':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Link'
+    icon: 'icon-external-link'
+    group: contentBlocks
+    inspector:
+      groups:
+        title:
+          label: 'Link'
+          position: 100
+  properties:
+    variant:
+      defaultValue: 'Link-Button'
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Link-Button':
+                label: 'Button'
+              'Link-Inline':
+                label: 'Inline'
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: TRUE

@@ -1,0 +1,4 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+	<a>{neos:contentElement.editable(property: 'text')} </a>
+</div>

@@ -1,31 +1,31 @@
 {namespace ts=TYPO3\TypoScript\ViewHelpers}
 {namespace neos=TYPO3\Neos\ViewHelpers}
-
 <f:section name="main">
 	<div class="Sections js-sections {layout}">
 		<ul class="Sections-Tabs">
-			<ts:render path="menu" />
+			{tabs -> f:format.raw()}
 		</ul>
-
-		<ts:render path="panels" />
+		{panels -> f:format.raw()}
 	</div>
 </f:section>
 
-<f:section name="menuItem">
+
+<f:section name="tab">
 	<li class="Sections-Tab">
-		<neos:contentElement.wrap node="{node}">
-			<a class="Sections-Anchor" href="#{node.name}">
-				<neos:contentElement.editable property="title" tag="span"/><span class="color-section"></span>
-			</a>
-		</neos:contentElement.wrap>
+		<a class="Sections-Anchor" href="#{node.name}">
+			{tab -> f:format.raw()}
+		</a>
 	</li>
 </f:section>
 
 <f:section name="panel">
 	<div class="Sections-AccordionTitle">
 		<a href="#{node.name}" class="Sections-Anchor">
-			<span>{title}</span><span class="color-section"></span>
+			{accordion -> f:format.raw()}
 		</a>
 	</div>
-	<ts:render path="section" />
+
+    <div class="Sections-Panel" id="{node.name}">
+		{panel -> f:format.raw()}
+    </div>
 </f:section>

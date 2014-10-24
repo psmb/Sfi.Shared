@@ -1,45 +1,15 @@
-prototype(Sfi.Widgets:Carousel) < prototype(TYPO3.Neos:ContentCollection) {
-    attributes.class = 'Carousel'
-	nodePath = '.'
+include: **/*.ts2
+
+
+
+
+prototype(Sfi.Widgets:Carousel) {
+    attributes.class = ${q(node).property('responsive')?'Carousel js-carousel-responsive':'Carousel js-carousel'}
+	content = Sfi.Widgets:ContentCollection
 }
 
-
-prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
-	sectionName = 'main'
-	layout = ${q(node).property('layout')}
-	menu = TYPO3.TypoScript:Collection
-	menu {
-		collection = ${q(node).children()}
-		itemRenderer = Sfi.Widgets:MenuItem
-		itemName = 'node'
-	}
-
-	panels = TYPO3.TypoScript:Collection
-	panels {
-		collection = ${q(node).children()}
-		itemRenderer = Sfi.Widgets:Panel
-		itemName = 'node'
-	}
-}
-
-prototype(Sfi.Widgets:MenuItem) < prototype(TYPO3.TypoScript:Template) {
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
-	sectionName = 'menuItem'
-	title = ${q(node).property('title')}
-	node = ${q(node).get(0)}
-}
-
-prototype(Sfi.Widgets:Panel) < prototype(TYPO3.TypoScript:Template) {
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
-	sectionName = 'panel'
-	title = ${q(node).property('title')}
-	node = ${q(node).get(0)}
-
-	section = Sfi.Widgets:Section
-}
-
-prototype(Sfi.Widgets:Section) < prototype(TYPO3.Neos:ContentCollection) {
-    attributes.class = 'Sections-Panel'
-    attributes.id = ${q(node).property('_name')}
-	nodePath = '.'
+prototype(Sfi.Widgets:Link) {
+	@override.target = ${this.target}
+	target.@process.convertUris = TYPO3.Neos:ConvertUris
+	attributes.href = ${target}
 }

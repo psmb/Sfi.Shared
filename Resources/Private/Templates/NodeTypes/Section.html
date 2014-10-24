@@ -1,0 +1,19 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+{namespace media=TYPO3\Media\ViewHelpers}
+
+<f:section name="tab">
+	<neos:contentElement.wrap node="{node}">
+		<span>
+			<neos:contentElement.editable property="title" tag="span"/><span class="color-section"></span>
+		</span>
+	</neos:contentElement.wrap>
+</f:section>
+
+<f:section name="accordion">
+	{title}<span class="color-section"></span>
+</f:section>
+
+<f:section name="panel">
+	{content -> f:format.raw()}
+</f:section>
+
