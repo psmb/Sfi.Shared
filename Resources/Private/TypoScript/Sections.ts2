@@ -1,7 +1,7 @@
 # Sections object renders children into responsive tabs.
 # Tabs content is completely decoupled from structure.
 # You can use the same principle to create very advanced content blocks decoupled from its content.
-prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
+prototype(Sfi.Widgets:Sections) {
 	sectionName = 'main'
 	layout = ${q(node).property('layout')}
 
