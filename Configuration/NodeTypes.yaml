@@ -57,10 +57,6 @@
                 label: 'Vertical Tabs'
               'Sections--Pills':
                 label: 'Pills'
-  constraints:
-    nodeTypes:
-      '*': false
-      'Sfi.Widgets:Section': true
 
 'Sfi.Widgets:Section':
   superTypes:

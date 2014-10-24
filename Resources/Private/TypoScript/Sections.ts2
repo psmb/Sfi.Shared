@@ -21,7 +21,6 @@ prototype(Sfi.Widgets:Sections) < prototype(TYPO3.Neos:Content) {
 prototype(Sfi.Widgets:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
 	sectionName = 'to-be-set'
 	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
-	@override.sectionName = ${this.sectionName}
     node = ${q(node).get(0)}
 }
 prototype(Sfi.Widgets:SectionsTabRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
@@ -46,7 +45,6 @@ prototype(Sfi.Widgets:SectionsPanelRenderer) < prototype(Sfi.Widgets:SectionsAbs
 prototype(Sfi.Widgets:Section) {
     sectionName = ${section}
     node = ${q(node).get(0)}
-    @override.theNode = ${this.node}
 
 	content = Sfi.Widgets:ContentCollection
 }
