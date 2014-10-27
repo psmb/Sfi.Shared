@@ -21,7 +21,7 @@ prototype(Sfi.Widgets:Sections) {
 prototype(Sfi.Widgets:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
 	sectionName = 'to-be-set'
 	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
-    node = ${q(node).get(0)}
+	node = ${q(node).get(0)}
 }
 prototype(Sfi.Widgets:SectionsTabRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
 	sectionName = 'tab'
@@ -43,7 +43,7 @@ prototype(Sfi.Widgets:SectionsPanelRenderer) < prototype(Sfi.Widgets:SectionsAbs
 # Can be something way more fancy like tabs with images or whatever you can imagine.
 # Its template must provide 3 sections: tab, accordion and panel.
 prototype(Sfi.Widgets:Section) {
-    sectionName = ${section}
-    node = ${q(node).get(0)}
+	sectionName = ${section}
+	node = ${q(node).get(0)}
 	content = Sfi.Widgets:ContentCollection
 }

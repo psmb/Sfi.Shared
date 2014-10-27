@@ -3,3 +3,8 @@ TYPO3:
     typoScript:
       autoInclude:
         'Sfi.Widgets': TRUE
+    nodeTypes:
+      groups:
+        contentWidgets:
+          position: 120
+          label: 'Content Widgets'
