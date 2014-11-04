@@ -85,7 +85,7 @@
     group: contentBlocks
     inspector:
       groups:
-        title:
+        link:
           label: 'Link'
           position: 100
   properties:
