@@ -1,0 +1,39 @@
+{namespace neos=TYPO3\Neos\ViewHelpers}
+<div{attributes -> f:format.raw()}>
+
+	<div class="row">
+		<f:if condition="{inverse}">
+			<f:then>
+				<div class="large-6 columns">
+					<div class="TextWithImage-Headline color-section">
+						{headline -> f:format.raw()}
+					</div>
+					<div class="TextWithImage-Text">
+						{text -> f:format.raw()}	
+					</div>
+				</div>
+				<div class="large-6 columns">
+					<div class="TextWithImage-Image">
+						{image -> f:format.raw()}
+					</div>
+				</div>     
+			</f:then>
+			<f:else>
+				<div class="large-6 columns">
+					<div class="TextWithImage-Image">
+						{image -> f:format.raw()}
+					</div>
+				</div>
+				<div class="large-6 columns">
+					<div class="TextWithImage-Headline color-section">
+						{headline -> f:format.raw()}
+					</div>
+					<div class="TextWithImage-Text">
+						{text -> f:format.raw()}	
+					</div>
+				</div>
+			</f:else>
+		</f:if>
+	</div>
+
+</div>

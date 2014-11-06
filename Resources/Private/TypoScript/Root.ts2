@@ -1,21 +1,32 @@
 include: **/*.ts2
 
-prototype(Sfi.Widgets:Carousel) {
-    attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
-	content = Sfi.Widgets:ContentCollection
 
-	prototype(TYPO3.Neos.NodeTypes:Image){
-		maximumWidth = 600
-		maximumHeight = 400
-		allowCropping = TRUE
+
+prototype(Sfi.Widgets:TextWithImage) {
+	attributes.class = 'TextWithImage'
+	headline = TYPO3.Neos.NodeTypes:Headline{
+		@override.node = ${q(node).children('headline').get(0)}
+	}
+	text = TYPO3.Neos.NodeTypes:Text{
+		@override.node = ${q(node).children('text').get(0)}
+	}
+	image = TYPO3.Neos.NodeTypes:Image{
+		@override.node = ${q(node).children('image').get(0)}
 	}
 }
 
-# WIP
+
+
+
 prototype(Sfi.Widgets:Link) {
-	attributes.class = 'Button--Light'
+	attributes.class = ${node.properties.variant == 'Link-Button' ? 'Button' : 'Link'}
 	attributes.href = ${node.properties.target}
 	attributes.href.@process.convertUris = TYPO3.Neos:ConvertUris {
 		forceConversion = true
 	}
 }
+
+
+
+
+

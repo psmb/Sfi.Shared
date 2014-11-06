@@ -1,4 +1,3 @@
-
 'Sfi.Widgets:Carousel':
   superTypes:
     - 'TYPO3.Neos:Content'
@@ -74,46 +73,3 @@
     title:
       type: string
       defaultValue: 'One more tab'
-
-
-'Sfi.Widgets:Link':
-  superTypes:
-    - 'TYPO3.Neos:Content'
-  ui:
-    label: 'Link'
-    icon: 'icon-external-link'
-    group: contentBlocks
-    inspector:
-      groups:
-        link:
-          label: 'Link'
-          position: 100
-  properties:
-    variant:
-      defaultValue: 'Link-Button'
-      type: string
-      ui:
-        label: 'Link variant'
-        reloadIfChanged: true
-        inspector:
-          group: link
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            values:
-              'Link-Button':
-                label: 'Button'
-              'Link-Inline':
-                label: 'Inline'
-    target:
-      type: string
-      ui:
-        label: 'Link target'
-        reloadIfChanged: FALSE
-        inspector:
-          group: 'link'
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
-    text:
-      type: string
-      defaultValue: 'Link text'
-      ui:
-        inlineEditable: TRUE

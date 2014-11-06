@@ -1,0 +1,49 @@
+#Adjust default styles
+'TYPO3.Neos.NodeTypes:ImageMixin':
+  properties:
+    title:
+      ui:
+        inspector:
+          group: 'unset'
+
+'TYPO3.Neos.NodeTypes:ImageCaptionMixin':
+  properties:
+    hasCaption:
+      defaultValue: TRUE
+
+'TYPO3.Neos.NodeTypes:ImageAlignmentMixin':
+  properties:
+    alignment:
+      ui:
+        inspector:
+          group: 'unset'
+
+'TYPO3.Neos.NodeTypes:TextMixin':
+  abstract: TRUE
+  properties:
+    text:
+      type: string
+      defaultValue: '<p>Enter text here</p>'
+      ui:
+        inlineEditable: true
+        aloha:
+          format:
+            strong: true
+            em: true
+            u: false
+            sub: false
+            sup: false
+            p: true
+            h1: true
+            h2: true
+            h3: true
+            pre: true
+            removeFormat: true
+            blockquote: true
+          table:
+            table: true
+          list:
+            ol: true
+            ul: true
+          link:
+            a: true

@@ -1,0 +1,85 @@
+'TYPO3.Neos.NodeTypes:TextWithImage':
+  abstract: TRUE
+
+
+# Extend Headline with subtitle
+'TYPO3.Neos.NodeTypes:Headline':
+  ui:
+    icon: 'icon-font'
+  properties:
+    subTitle:
+      type: string
+      defaultValue: '<p>Subtitle</p>'
+      ui:
+        inlineEditable: TRUE
+
+
+'Sfi.Widgets:TextWithImage':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  childNodes:
+    headline:
+      type: 'TYPO3.Neos.NodeTypes:Headline'
+    text:
+      type: 'TYPO3.Neos.NodeTypes:Text'
+    image:
+      type: 'TYPO3.Neos.NodeTypes:Image'
+  ui:
+    label: 'Text with Image'
+    icon: 'icon-picture'
+    position: 400
+    group: contentBlocks
+  properties:
+    inverse:
+      type: boolean
+      ui:
+        label: 'Inverse Image and Text?'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+
+
+
+
+
+'Sfi.Widgets:Link':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Link'
+    icon: 'icon-external-link'
+    group: contentBlocks
+    inspector:
+      groups:
+        link:
+          label: 'Link'
+          position: 100
+  properties:
+    variant:
+      defaultValue: 'Link-Button'
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Link-Button':
+                label: 'Button'
+              'Link-Inline':
+                label: 'Inline'
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: TRUE

@@ -47,3 +47,21 @@ prototype(Sfi.Widgets:Section) {
 	node = ${q(node).get(0)}
 	content = Sfi.Widgets:ContentCollection
 }
+
+
+
+
+
+
+
+#Carousel
+prototype(Sfi.Widgets:Carousel) {
+    attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
+	content = Sfi.Widgets:ContentCollection
+
+	prototype(TYPO3.Neos.NodeTypes:Image){
+		maximumWidth = 900
+		maximumHeight = 600
+		allowCropping = TRUE
+	}
+}
