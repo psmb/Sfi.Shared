@@ -29,14 +29,29 @@
     icon: 'icon-picture'
     position: 400
     group: contentBlocks
+    inspector:
+      groups:
+        variant:
+          label: 'Variant'
+          position: 100
   properties:
-    inverse:
-      type: boolean
+    variant:
+      defaultValue: 'Image-Top'
+      type: string
       ui:
-        label: 'Inverse Image and Text?'
-        reloadIfChanged: TRUE
+        label: 'Variant'
+        reloadIfChanged: true
         inspector:
-          group: 'image'
+          group: variant
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Image-Top':
+                label: 'Image-Top'
+              'Image-Left':
+                label: 'Image-Left'
+              'Image-Right':
+                label: 'Image-Right'
 
 
 

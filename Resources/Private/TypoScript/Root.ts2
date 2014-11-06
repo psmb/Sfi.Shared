@@ -3,7 +3,7 @@ include: **/*.ts2
 
 
 prototype(Sfi.Widgets:TextWithImage) {
-	attributes.class = 'TextWithImage'
+	attributes.class = ${'TextWithImage ' + node.properties.variant}
 	headline = TYPO3.Neos.NodeTypes:Headline{
 		@override.node = ${q(node).children('headline').get(0)}
 	}
