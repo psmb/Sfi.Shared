@@ -1,3 +1,5 @@
+
+
 'Sfi.Widgets:Carousel':
   superTypes:
     - 'TYPO3.Neos:Content'

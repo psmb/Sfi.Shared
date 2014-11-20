@@ -3,7 +3,9 @@
 	<div class="Headline-Title">
 		{neos:contentElement.editable(property: 'title')}
 	</div>
-	<div class="Headline-Subtitle">
-		{neos:contentElement.editable(property: 'subTitle')}
-	</div>
+	<f:if condition="{hasSubTitle}">
+		<div class="Headline-Subtitle">
+			{neos:contentElement.editable(property: 'subTitle')}
+		</div>
+	</f:if>
 </div>

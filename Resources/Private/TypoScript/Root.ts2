@@ -26,6 +26,17 @@ prototype(Sfi.Widgets:Link) {
 	}
 }
 
+prototype(Sfi.Widgets:ImageLink) {
+	attributes.class = ${'ImageLink ' + node.properties.variant}
+	maximumWidth = 300
+	maximumHeight = 250
+	allowCropping = TRUE
+	allowUpScaling = TRUE
+	link.@process.convertUris = TYPO3.Neos:ConvertUris {
+		forceConversion = TRUE
+	}
+}
+
 
 
 

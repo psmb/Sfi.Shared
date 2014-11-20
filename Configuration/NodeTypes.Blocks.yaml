@@ -2,8 +2,42 @@
   abstract: TRUE
 
 
+
+'Sfi.Widgets:StyleSetMixin':
+  abstract: TRUE
+  ui:
+    inspector:
+      groups:
+        variant:
+          label: 'Variant'
+          position: 100
+  properties:
+    variant:
+      defaultValue: 'Inherit'
+      type: string
+      ui:
+        label: 'Variant'
+        reloadIfChanged: false
+        inspector:
+          group: variant
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Inherit':
+                label: 'Inherit'
+              'StyleSet-Classic':
+                label: 'StyleSet-Classic'
+              'StyleSet-Modern':
+                label: 'StyleSet-Modern'
+              'StyleSet-SemiModern':
+                label: 'StyleSet-SemiModern'
+
 # Extend Headline with subtitle
 'TYPO3.Neos.NodeTypes:Headline':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:TitleMixin'
+    - 'Sfi.Widgets:StyleSetMixin'
   ui:
     icon: 'icon-font'
   properties:
@@ -12,6 +46,20 @@
       defaultValue: '<p>Subtitle</p>'
       ui:
         inlineEditable: TRUE
+    hasSubTitle:
+      type: boolean
+      ui:
+        label: 'Enable subTitle'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'variant'
+
+'TYPO3.Neos.NodeTypes:Text':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:TextMixin'
+    - 'Sfi.Widgets:StyleSetMixin'
+
 
 
 'Sfi.Widgets:TextWithImage':
@@ -85,6 +133,41 @@
                 label: 'Button'
               'Link-Inline':
                 label: 'Inline'
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: TRUE
+
+'Sfi.Widgets:ImageLink':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Image'
+  ui:
+    label: 'Image Link'
+    icon: 'icon-external-link'
+    group: contentBlocks
+  properties:
+    variant:
+      defaultValue: ''
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Reserved':
+                label: 'Reserved'
     target:
       type: string
       ui:

@@ -59,9 +59,8 @@ prototype(Sfi.Widgets:Carousel) {
     attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
 	content = Sfi.Widgets:ContentCollection
 
+	@override.responsive = ${q(node).property('responsive')}
 	prototype(TYPO3.Neos.NodeTypes:Image){
-		maximumWidth = 900
-		maximumHeight = 600
-		allowCropping = TRUE
+		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 900)}
 	}
 }

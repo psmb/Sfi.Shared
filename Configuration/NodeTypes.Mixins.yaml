@@ -47,3 +47,21 @@
             ul: true
           link:
             a: true
+
+
+'TYPO3.Neos:Content':
+  properties:
+    _name:
+      type: string
+      ui:
+        label: 'Name (URL)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'type'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
