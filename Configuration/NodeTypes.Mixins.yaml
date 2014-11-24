@@ -65,3 +65,33 @@
           maximum: 255
         regularExpression:
           regularExpression: '/^[a-z0-9\-]+$/i'
+'TYPO3.Neos:Document':
+  properties:
+    _name:
+      type: string
+      ui:
+        label: 'Name (URL)'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'type'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
+        regularExpression:
+          regularExpression: '/^[a-z0-9\-]+$/i'
+
+'TYPO3.Neos.NodeTypes:Page':
+  properties:
+    altTitle:
+      type: string
+      ui:
+        label: 'Alternative title'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'document'
+      validation:
+        'TYPO3.Neos/Validation/StringLengthValidator':
+          minimum: 1
+          maximum: 255
