@@ -13,6 +13,9 @@ prototype(Sfi.Widgets:TextWithImage) {
 	image = TYPO3.Neos.NodeTypes:Image{
 		@override.node = ${q(node).children('image').get(0)}
 	}
+	prototype(TYPO3.Neos.NodeTypes:Image){
+		maximumWidth = 600
+	}
 }
 
 

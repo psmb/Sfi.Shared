@@ -61,6 +61,6 @@ prototype(Sfi.Widgets:Carousel) {
 
 	@override.responsive = ${q(node).property('responsive')}
 	prototype(TYPO3.Neos.NodeTypes:Image){
-		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 900)}
+		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 980)}
 	}
 }
