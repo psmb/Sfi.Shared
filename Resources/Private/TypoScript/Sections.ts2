@@ -58,8 +58,8 @@ prototype(Sfi.Widgets:SectionWithImage) {
     node = ${q(node).get(0)}
     @override.theNode = ${this.node}
 
-    imageMaximumWidth = 120
-    imageMaximumHeight = 120
+    imageMaximumWidth = ${q(node).property('sectionVariant') == 'SectionWithImageVariant2' ? 200 : 120}
+    imageMaximumHeight = ${q(node).property('sectionVariant') == 'SectionWithImageVariant2' ? 200 : 120}
 
     accordionImageMaximumWidth = 150
     accordionImageMaximumHeight = 150
