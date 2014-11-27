@@ -83,6 +83,7 @@
     - 'TYPO3.Neos.NodeTypes:Image'
   ui:
     label: 'Section with image'
+    group: contentWidgets
     icon: 'icon-edit'
   properties:
     anchorImage:
