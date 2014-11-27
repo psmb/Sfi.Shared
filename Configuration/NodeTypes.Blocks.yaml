@@ -25,12 +25,14 @@
             values:
               'Inherit':
                 label: 'Inherit'
-              'StyleSet-Classic':
-                label: 'StyleSet-Classic'
-              'StyleSet-Modern':
-                label: 'StyleSet-Modern'
-              'StyleSet-SemiModern':
-                label: 'StyleSet-SemiModern'
+              'StyleSet-ClassicGrand':
+                label: 'StyleSet-ClassicGrand'
+              'StyleSet-ClassicModest':
+                label: 'StyleSet-ClassicModest'
+              'StyleSet-ModernGrand':
+                label: 'StyleSet-ModernGrand'
+              'StyleSet-ModernModest':
+                label: 'StyleSet-ModernModest'
 
 # Extend Headline with subtitle
 'TYPO3.Neos.NodeTypes:Headline':
