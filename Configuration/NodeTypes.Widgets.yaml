@@ -75,3 +75,35 @@
     title:
       type: string
       defaultValue: 'One more tab'
+
+
+'Sfi.Widgets:SectionWithImage':
+  superTypes:
+    - 'Sfi.Widgets:TextWithImage'
+    - 'TYPO3.Neos.NodeTypes:Image'
+  ui:
+    label: 'Section with image'
+    icon: 'icon-edit'
+  properties:
+    anchorImage:
+      type: TYPO3\Media\Domain\Model\ImageVariant
+      ui:
+        label: 'Anchor Image'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'image'
+    sectionVariant:
+      defaultValue: 'SectionWithImageVariant1'
+      type: string
+      ui:
+        label: 'Section variant'
+        reloadIfChanged: true
+        inspector:
+          group: variant
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'SectionWithImageVariant1':
+                label: 'Variant 1'
+              'SectionWithImageVariant2':
+                label: 'Variant 2'

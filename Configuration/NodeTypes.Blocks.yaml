@@ -81,13 +81,13 @@
       groups:
         variant:
           label: 'Variant'
-          position: 100
+          position: 'start 100'
   properties:
     variant:
       defaultValue: 'Image-Top'
       type: string
       ui:
-        label: 'Variant'
+        label: 'TextWithImage variant'
         reloadIfChanged: true
         inspector:
           group: variant

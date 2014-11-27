@@ -1,59 +1,3 @@
-# Sections object renders children into responsive tabs.
-# Tabs content is completely decoupled from structure.
-# You can use the same principle to create very advanced content blocks decoupled from its content.
-prototype(Sfi.Widgets:Sections) {
-	sectionName = 'main'
-	layout = ${q(node).property('layout')}
-
-	tabs = TYPO3.TypoScript:Collection {
-		collection = ${q(node).children()}
-		itemRenderer = Sfi.Widgets:SectionsTabRenderer
-		itemName = 'node'
-	}
-
-	panels = TYPO3.TypoScript:Collection {
-		collection = ${q(node).children()}
-		itemRenderer = Sfi.Widgets:SectionsPanelRenderer
-		itemName = 'node'
-	}
-}
-
-prototype(Sfi.Widgets:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
-	sectionName = 'to-be-set'
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Sections.html'
-	node = ${q(node).get(0)}
-}
-prototype(Sfi.Widgets:SectionsTabRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
-	sectionName = 'tab'
-	tab = Sfi.Widgets:AutoRender {
-		@override.section = 'tab'
-	}
-}
-prototype(Sfi.Widgets:SectionsPanelRenderer) < prototype(Sfi.Widgets:SectionsAbstractRenderer) {
-	sectionName = 'panel'
-	accordion = Sfi.Widgets:AutoRender {
-		@override.section = 'accordion'
-	}
-	panel = Sfi.Widgets:AutoRender {
-		@override.section = 'panel'
-	}
-}
-
-# Example simple tab content implementation with just content collection.
-# Can be something way more fancy like tabs with images or whatever you can imagine.
-# Its template must provide 3 sections: tab, accordion and panel.
-prototype(Sfi.Widgets:Section) {
-	sectionName = ${section}
-	node = ${q(node).get(0)}
-	content = Sfi.Widgets:ContentCollection
-}
-
-
-
-
-
-
-
 #Carousel
 prototype(Sfi.Widgets:Carousel) {
     attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
@@ -61,6 +5,7 @@ prototype(Sfi.Widgets:Carousel) {
 
 	@override.responsive = ${q(node).property('responsive')}
 	prototype(TYPO3.Neos.NodeTypes:Image){
+		attributes.class = 'Carousel-Item'
 		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 980)}
 	}
 }
