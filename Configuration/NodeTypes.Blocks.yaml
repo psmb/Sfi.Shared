@@ -1,5 +1,4 @@
-'TYPO3.Neos.NodeTypes:TextWithImage':
-  abstract: TRUE
+
 
 
 
@@ -61,7 +60,31 @@
     - 'TYPO3.Neos:Content'
     - 'TYPO3.Neos.NodeTypes:TextMixin'
     - 'Sfi.Widgets:StyleSetMixin'
-
+  properties:
+    isBlockquote:
+      type: boolean
+      ui:
+        label: 'Blockquote'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'variant'
+    paragraphVariant:
+      defaultValue: ''
+      type: string
+      ui:
+        label: 'Paragraph variant'
+        reloadIfChanged: TRUE
+        inspector:
+          group: variant
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              'Paragraph--Small':
+                label: 'Paragraph--Small'
+              'Paragraph--Large':
+                label: 'Paragraph--Large'
 
 
 'Sfi.Widgets:TextWithImage':

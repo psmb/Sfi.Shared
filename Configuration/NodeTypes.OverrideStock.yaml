@@ -39,7 +39,6 @@
             h3: true
             pre: true
             removeFormat: true
-            blockquote: true
           table:
             table: true
           list:
@@ -47,6 +46,10 @@
             ul: true
           link:
             a: true
+
+'TYPO3.Neos.NodeTypes:TextWithImage':
+  abstract: TRUE
+
 
 
 'TYPO3.Neos:Content':
