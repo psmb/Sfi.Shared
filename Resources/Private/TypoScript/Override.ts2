@@ -1,13 +1,14 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
 	imageClassName = "Figure"
+	maximumWidth = 980
 }
 
 prototype(TYPO3.Neos.NodeTypes:Text) {
-	attributes.class = ${(node.properties.isBlockquote ? 'Blockquote OverrideParagraph' : '') + (node.properties.paragraphVariant == null ? '' : node.properties.paragraphVariant + ' OverrideParagraph') + ' ' + (node.properties.variant=='Inherit'?(q(node).parent().is('[instanceof Sfi.Widgets:TextWithImage]')?'StyleSet-ModernModest':(q(node).parents('[instanceof TYPO3.Neos.NodeTypes:Page]').is('[instanceof Sfi.Sfi:PagePresentation]')?'StyleSet-ClassicGrand':'StyleSet-ClassicModest')):node.properties.variant)}
+	attributes.class = ${(node.properties.isBlockquote ? 'Blockquote OverrideParagraph' : '') + ((node.properties.paragraphVariant == null || node.properties.paragraphVariant == '') ? '' : node.properties.paragraphVariant + ' OverrideParagraph') + ' ' + (node.properties.variant=='Inherit'?(q(node).parent().is('[instanceof Sfi.Widgets:TextWithImage]')?'StyleSet-ModernModest':(q(node).parents('[instanceof TYPO3.Neos.NodeTypes:Page]').is('[instanceof Sfi.Sfi:PagePresentation]')?'StyleSet-ClassicGrand':'StyleSet-ClassicModest')):node.properties.variant)}
 }
 
 prototype(TYPO3.Neos.NodeTypes:Headline) {
 	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Headline.html'
 	attributes.id = ${q(node).property('_name')}
-	attributes.class = ${node.properties.variant=='Inherit'?(q(node).parent().is('[instanceof Sfi.Widgets:TextWithImage]')?'StyleSet-ModernModest':(q(node).parents('[instanceof TYPO3.Neos.NodeTypes:Page]').is('[instanceof Sfi.Sfi:PagePresentation]')?'StyleSet-ClassicGrand':'StyleSet-ClassicModest')):node.properties.variant}
+	attributes.class = ${node.properties.variant=='Inherit'?(q(node).parent().is('[instanceof Sfi.Widgets:TextWithImage]')?'StyleSet-ModernModest':(q(node).parents('[instanceof TYPO3.Neos.NodeTypes:Page]').is('[instanceof Sfi.Sfi:PagePresentation]')?'StyleSet-ClassicGrand':'')):node.properties.variant}
 }
