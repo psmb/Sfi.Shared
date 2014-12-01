@@ -22,7 +22,7 @@ prototype(Sfi.Widgets:TextWithImage) {
 
 
 prototype(Sfi.Widgets:Link) {
-	attributes.class = ${node.properties.variant == 'Link-Button' ? 'Button' : 'Link'}
+	attributes.class = ${node.properties.variant == 'Link-Button' ? 'LinkButton' : 'LinkInline'}
 	attributes.href = ${node.properties.target}
 	attributes.href.@process.convertUris = TYPO3.Neos:ConvertUris {
 		forceConversion = true
