@@ -6,6 +6,16 @@ prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 	}
 }
 
+prototype(Sfi.Widgets:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
+	@override.node = ${node}
+	content = Sfi.Widgets:AutoRender{
+		@override.node = ${node}
+	}
+	tagName = 'li'
+	attributes.class = 'FooterGallery-Item'
+}
+
+
 # Alternative to ContentCollection. No extra nodes! The only down side: no content handles.
 prototype(Sfi.Widgets:ContentCollection) < prototype(TYPO3.TypoScript:Collection) {
 	collection = ${q(node).children()}
