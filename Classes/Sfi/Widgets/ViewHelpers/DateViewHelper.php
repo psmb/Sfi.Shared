@@ -50,9 +50,9 @@ class DateViewHelper extends \TYPO3\Fluid\ViewHelpers\Format\DateViewHelper {
 		}
 		// Fix Russian month name, in the ugliest way possible
 		$monthNames = array("Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря");
-		$format = str_replace('F',$monthNames[$date->format('n')-1],$format);
+		$format = str_replace('F', $monthNames[$date->format('n')-1], $format);
 		$output = parent::render($date, $format, $localeFormatType, $localeFormatLength, $cldrFormat);
 
-		return $output;
+		return str_replace(" 0:00", "", $output);
 	}
 }

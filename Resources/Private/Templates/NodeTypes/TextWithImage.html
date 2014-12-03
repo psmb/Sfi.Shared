@@ -14,12 +14,12 @@
 	</f:if>
 	<f:if condition="{variant} == 'Image-Left'">
 		<div class="row">
-			<div class="large-6 columns">
+			<div class="medium-6 columns">
 				<div class="TextWithImage-Image">
 					{image -> f:format.raw()}
 				</div>
 			</div>
-			<div class="large-6 columns">
+			<div class="medium-6 columns">
 				<div class="TextWithImage-Headline">
 					{headline -> f:format.raw()}
 				</div>
@@ -31,7 +31,7 @@
 	</f:if>
 	<f:if condition="{variant} == 'Image-Right'">
 		<div class="row">
-			<div class="large-6 columns">
+			<div class="medium-6 columns">
 				<div class="TextWithImage-Headline">
 					{headline -> f:format.raw()}
 				</div>
@@ -39,7 +39,7 @@
 					{text -> f:format.raw()}	
 				</div>
 			</div>
-			<div class="large-6 columns">
+			<div class="medium-6 columns">
 				<div class="TextWithImage-Image">
 					{image -> f:format.raw()}
 				</div>
