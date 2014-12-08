@@ -1,7 +1,7 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
 	imageClassName = "Figure"
 	maximumWidth = 980
-	hasCaption = ${node.context.workspace.name == 'live' ? (this.caption == "<p>Enter caption here</p>" ? null : true) : true}
+	hasCaption = ${node.context.workspace.name == 'live' ? (((this.caption == "<p>Enter caption here</p>") || (this.caption == "")) ? null : true) : true}
 }
 
 prototype(TYPO3.Neos.NodeTypes:Text) {
