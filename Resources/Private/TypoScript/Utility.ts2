@@ -6,19 +6,15 @@ prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 	}
 }
 
+# Wrap AutoRender with tag. You can also use tag atrributes and other properties
 prototype(Sfi.Widgets:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
-	@override.node = ${node}
-	content = Sfi.Widgets:AutoRender{
-		@override.node = ${node}
-	}
-	tagName = 'li'
-	attributes.class = 'FooterGallery-Item'
+	content = Sfi.Widgets:AutoRender
+	tagName = 'div'
 }
-
 
 # Alternative to ContentCollection. No extra nodes! The only down side: no content handles.
 prototype(Sfi.Widgets:ContentCollection) < prototype(TYPO3.TypoScript:Collection) {
-	collection = ${q(node).children()}
+	collection = ${q(node).context({'removedContentShown': true}).children()}
 	itemRenderer = Sfi.Widgets:AutoRender
 	itemName = 'node'
 	iterationName = 'iterator'
