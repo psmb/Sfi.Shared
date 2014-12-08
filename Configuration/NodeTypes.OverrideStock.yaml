@@ -6,11 +6,6 @@
         inspector:
           group: 'unset'
 
-'TYPO3.Neos.NodeTypes:ImageCaptionMixin':
-  properties:
-    hasCaption:
-      defaultValue: TRUE
-
 'TYPO3.Neos.NodeTypes:ImageAlignmentMixin':
   properties:
     alignment:
