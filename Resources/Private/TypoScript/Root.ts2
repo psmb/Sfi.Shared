@@ -1,7 +1,5 @@
 include: **/*.ts2
 
-
-
 prototype(Sfi.Widgets:TextWithImage) {
 	attributes.class = ${'TextWithImage ' + node.properties.variant}
 	headline = TYPO3.Neos.NodeTypes:Headline{
@@ -17,9 +15,6 @@ prototype(Sfi.Widgets:TextWithImage) {
 		maximumWidth = 600
 	}
 }
-
-
-
 
 prototype(Sfi.Widgets:Link) {
 	attributes.class = ${node.properties.variant == 'Link-Button' ? 'LinkButton' : 'LinkInline'}
@@ -39,8 +34,3 @@ prototype(Sfi.Widgets:ImageLink) {
 		forceConversion = TRUE
 	}
 }
-
-
-
-
-
