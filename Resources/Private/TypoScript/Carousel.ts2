@@ -8,4 +8,5 @@ prototype(Sfi.Widgets:Carousel) < prototype(TYPO3.TypoScript:Tag) {
 		attributes.class = 'Carousel-Item'
 		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 980)}
 	}
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }
