@@ -1,0 +1,14 @@
+#YouTube
+prototype(Sfi.Widgets:YouTube) < prototype(TYPO3.TypoScript:Tag) {
+    tagName = "iframe"
+    attributes{
+    	class = "YouTube"
+    	width = 853
+    	height = 480
+    	frameborder = "0"
+    	# Extract video id from normal playback url
+    	src = ${'//www.youtube.com/embed/' + Array.First(Array.Slice(String.pregMatch(q(node).property('videoUrl'),'#\?v=([a-z0-9-]+)#i'),1)) + '?rel=0&amp;showinfo=0'} 
+    	allowfullscreen = true
+    }
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+}

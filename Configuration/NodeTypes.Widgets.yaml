@@ -1,11 +1,32 @@
-
+'Sfi.Widgets:YouTube':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'YouTube Video'
+    group: 'contentWidgets'
+    icon: 'fa-youtube'
+    inspector:
+      groups:
+        video:
+          label: 'Video'
+  properties:
+    videoUrl:
+      type: string
+      ui:
+        label: 'Normal Youtube video URL'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        regularExpression:
+          regularExpression: '#\?=[a-z0-9-]+#i'
 
 'Sfi.Widgets:Carousel':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
     label: 'Carousel'
-    group: contentWidgets
+    group: 'contentWidgets'
     inlineEditable: true
     icon: 'icon-chevron-right'
     inspector:
