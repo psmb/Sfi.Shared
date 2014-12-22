@@ -19,7 +19,7 @@
       validation:
         'TYPO3.Neos/Validation/NotEmptyValidator': []
         regularExpression:
-          regularExpression: '#\?=[a-z0-9-]+#i'
+          regularExpression: '/\?v=[a-z0-9-]+/i'
 
 'Sfi.Widgets:Carousel':
   superTypes:
