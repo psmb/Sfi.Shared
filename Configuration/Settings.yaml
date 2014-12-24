@@ -11,3 +11,6 @@ TYPO3:
         contentWidgets:
           position: 120
           label: 'Content Widgets'
+        system:
+          position: end
+          label: 'System'
