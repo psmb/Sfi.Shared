@@ -47,7 +47,7 @@ prototype(Sfi.Widgets:SectionsPanelRenderer) < prototype(Sfi.Widgets:SectionsAbs
 prototype(Sfi.Widgets:Section) {
 	sectionName = ${section}
 	node = ${q(node).get(0)}
-	content = Sfi.Widgets:ContentCollection
+	content = TYPO3.Neos:ContentCollectionRenderer
 }
 
 # More advanced implementation: tabs with pictures for anchors, in two variants

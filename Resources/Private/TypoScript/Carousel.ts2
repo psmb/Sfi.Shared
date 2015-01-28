@@ -1,7 +1,7 @@
 #Carousel
 prototype(Sfi.Widgets:Carousel) < prototype(TYPO3.TypoScript:Tag) {
     attributes.class = ${'Carousel js-carousel-' + q(node).property('responsive')}
-	content = Sfi.Widgets:ContentCollection
+	content = TYPO3.Neos:ContentCollectionRenderer
 
 	@override.responsive = ${q(node).property('responsive')}
 	prototype(TYPO3.Neos.NodeTypes:Image){
