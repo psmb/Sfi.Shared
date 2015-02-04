@@ -13,3 +13,8 @@ prototype(TYPO3.Neos.NodeTypes:Headline) {
 	attributes.id = ${q(node).property('_name')}
 	attributes.class = 'RteText'
 }
+
+# TODO: implement it the write way
+prototype(TYPO3.Neos.NodeTypes:AssetList) {
+	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/AssetList.html'
+}
