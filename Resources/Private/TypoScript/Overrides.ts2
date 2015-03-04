@@ -1,4 +1,5 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
+	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Image.html'
 	imageClassName = "Figure"
 	maximumWidth = 980
 	hasCaption = ${node.context.workspace.name == 'live' ? (((this.caption == "<p>Enter caption here</p>") || (this.caption == "")) ? null : true) : true}
