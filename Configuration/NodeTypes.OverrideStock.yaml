@@ -26,8 +26,8 @@
             strong: true
             em: true
             u: false
-            sub: false
-            sup: false
+            sub: true
+            sup: true
             p: true
             h1: true
             h2: true
