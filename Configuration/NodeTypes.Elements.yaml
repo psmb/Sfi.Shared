@@ -1,0 +1,126 @@
+'Sfi.Widgets:YouTube':
+  superTypes: ['TYPO3.Neos:Content']
+  ui:
+    label: 'YouTube Video'
+    group: contentElements
+    icon: 'fa-youtube'
+    inspector:
+      groups:
+        video:
+          label: 'Video'
+  properties:
+    videoUrl:
+      type: string
+      ui:
+        label: 'Normal Youtube video URL'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'video'
+      validation:
+        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        regularExpression:
+          regularExpression: '/\?v=[a-z0-9-]+/i'
+
+'Sfi.Widgets:Link':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Link'
+    icon: 'icon-external-link'
+    group: contentBlocks
+    inspector:
+      groups:
+        link:
+          label: 'Link'
+          position: 100
+  properties:
+    variant:
+      defaultValue: 'Link-Button'
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Link-Button':
+                label: 'Button'
+              'Link-Inline':
+                label: 'Inline'
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: TRUE
+
+'Sfi.Widgets:ImageLink':
+  superTypes:
+    - 'TYPO3.Neos.NodeTypes:Image'
+  ui:
+    label: 'Image Link'
+    icon: 'icon-external-link'
+    group: contentBlocks
+  properties:
+    variant:
+      defaultValue: ''
+      type: string
+      ui:
+        label: 'Link variant'
+        reloadIfChanged: true
+        inspector:
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Reserved':
+                label: 'Reserved'
+    target:
+      type: string
+      ui:
+        label: 'Link target'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'link'
+          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+    text:
+      type: string
+      defaultValue: 'Link text'
+      ui:
+        inlineEditable: TRUE
+
+'Sfi.Widgets:Asset':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Asset'
+    icon: 'icon-edit'
+    group: contentElements
+    inspector:
+      groups:
+        asset:
+          label: 'Asset'
+          position: 'start 1'
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Enter asset name'
+    asset:
+      type: TYPO3\Media\Domain\Model\Asset
+      ui:
+        inspector:
+          group: 'asset'
+        label: 'Assets'
+        reloadIfChanged: TRUE

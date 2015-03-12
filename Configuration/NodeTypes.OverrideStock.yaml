@@ -1,3 +1,10 @@
+'TYPO3.Neos:PluginView':
+  abstract: TRUE
+'TYPO3.Neos.NodeTypes:Menu':
+  abstract: TRUE
+'TYPO3.Neos.NodeTypes:Form':
+  abstract: TRUE
+
 #Adjust default styles
 'TYPO3.Neos.NodeTypes:ImageMixin':
   properties:
@@ -47,6 +54,61 @@
 
 
 
+# Extend Headline with subtitle
+'TYPO3.Neos.NodeTypes:Headline':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:TitleMixin'
+  ui:
+    icon: 'icon-font'
+    inspector:
+      groups:
+        subtitle:
+          label: 'Subtitle'
+  properties:
+    subTitle:
+      type: string
+      defaultValue: '<p>Subtitle</p>'
+      ui:
+        inlineEditable: TRUE
+    hasSubTitle:
+      type: boolean
+      ui:
+        label: 'Enable subTitle'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'subtitle'
+
+'TYPO3.Neos.NodeTypes:Text':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+    - 'TYPO3.Neos.NodeTypes:TextMixin'
+  properties:
+    isBlockquote:
+      type: boolean
+      ui:
+        label: 'Blockquote'
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'variant'
+    paragraphVariant:
+      defaultValue: ''
+      type: string
+      ui:
+        label: 'Paragraph variant'
+        reloadIfChanged: TRUE
+        inspector:
+          group: variant
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              '':
+                label: 'Default'
+              'Paragraph--Small':
+                label: 'Paragraph--Small'
+              'Paragraph--Large':
+                label: 'Paragraph--Large'
+
 'TYPO3.Neos:Content':
   properties:
     _name:
@@ -63,6 +125,7 @@
           maximum: 255
         regularExpression:
           regularExpression: '/^[a-z0-9\-]+$/i'
+
 'TYPO3.Neos:Document':
   properties:
     _name:

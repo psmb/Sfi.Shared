@@ -5,6 +5,9 @@ TYPO3:
         'Sfi.Widgets': TRUE
     nodeTypes:
       groups:
+        contentElements:
+          position: 105
+          label: 'Content Elements'
         contentBlocks:
           position: 110
           label: 'Content Blocks'
