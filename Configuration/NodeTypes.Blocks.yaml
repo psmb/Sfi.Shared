@@ -1,44 +1,8 @@
-
-
-
-
-'Sfi.Widgets:StyleSetMixin':
-  abstract: TRUE
-  ui:
-    inspector:
-      groups:
-        variant:
-          label: 'Variant'
-          position: 100
-  properties:
-    variant:
-      defaultValue: 'Inherit'
-      type: string
-      ui:
-        label: 'Variant'
-        reloadIfChanged: false
-        inspector:
-          group: variant
-          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
-          editorOptions:
-            values:
-              'Inherit':
-                label: 'Inherit'
-              'StyleSet-ClassicGrand':
-                label: 'StyleSet-ClassicGrand'
-              'StyleSet-ClassicModest':
-                label: 'StyleSet-ClassicModest'
-              'StyleSet-ModernGrand':
-                label: 'StyleSet-ModernGrand'
-              'StyleSet-ModernModest':
-                label: 'StyleSet-ModernModest'
-
 # Extend Headline with subtitle
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'TYPO3.Neos.NodeTypes:TitleMixin'
-    - 'Sfi.Widgets:StyleSetMixin'
   ui:
     icon: 'icon-font'
   properties:
@@ -59,7 +23,6 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'TYPO3.Neos.NodeTypes:TextMixin'
-    - 'Sfi.Widgets:StyleSetMixin'
   properties:
     isBlockquote:
       type: boolean
