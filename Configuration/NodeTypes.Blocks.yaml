@@ -1,4 +1,4 @@
-'Sfi.Widgets:TextWithImage':
+'Sfi.Shared:TextWithImage':
   superTypes:
     - 'TYPO3.Neos:Content'
   childNodes:

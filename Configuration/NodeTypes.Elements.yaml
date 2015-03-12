@@ -1,4 +1,4 @@
-'Sfi.Widgets:YouTube':
+'Sfi.Shared:YouTube':
   superTypes: ['TYPO3.Neos:Content']
   ui:
     label: 'YouTube Video'
@@ -21,7 +21,7 @@
         regularExpression:
           regularExpression: '/\?v=[a-z0-9-]+/i'
 
-'Sfi.Widgets:Link':
+'Sfi.Shared:Link':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -63,7 +63,7 @@
       ui:
         inlineEditable: TRUE
 
-'Sfi.Widgets:ImageLink':
+'Sfi.Shared:ImageLink':
   superTypes:
     - 'TYPO3.Neos.NodeTypes:Image'
   ui:
@@ -98,7 +98,7 @@
       ui:
         inlineEditable: TRUE
 
-'Sfi.Widgets:Asset':
+'Sfi.Shared:Asset':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:

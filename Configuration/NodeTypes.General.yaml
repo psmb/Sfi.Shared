@@ -1,4 +1,4 @@
-'Sfi.Widgets:Epigraph':
+'Sfi.Shared:Epigraph':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -12,7 +12,7 @@
         aloha:
           placeholder: 'Epigraph text here'
 
-'Sfi.Widgets:Note':
+'Sfi.Shared:Note':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:

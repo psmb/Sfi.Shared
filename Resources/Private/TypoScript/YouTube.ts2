@@ -1,5 +1,5 @@
 #YouTube
-prototype(Sfi.Widgets:YouTube) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Shared:YouTube) < prototype(TYPO3.TypoScript:Tag) {
     tagName = "div"
     attributes.class = "YouTube flex-video"
     content = TYPO3.TypoScript:Tag {

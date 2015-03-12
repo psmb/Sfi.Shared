@@ -1,5 +1,5 @@
 prototype(TYPO3.Neos.NodeTypes:Image) {
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Image.html'
+	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/Image.html'
 	imageClassName = "Figure"
 	maximumWidth = 980
 	hasCaption = ${node.context.workspace.name == 'live' ? (((this.caption == "<p>Enter caption here</p>") || (this.caption == "")) ? null : true) : true}
@@ -10,12 +10,12 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
 }
 
 prototype(TYPO3.Neos.NodeTypes:Headline) {
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/Headline.html'
+	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/Headline.html'
 	attributes.id = ${q(node).property('_name')}
 	attributes.class = 'RteText'
 }
 
 # TODO: implement it the write way
 prototype(TYPO3.Neos.NodeTypes:AssetList) {
-	templatePath = 'resource://Sfi.Widgets/Private/Templates/NodeTypes/AssetList.html'
+	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/AssetList.html'
 }

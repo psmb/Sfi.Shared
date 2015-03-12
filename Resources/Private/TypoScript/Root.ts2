@@ -1,6 +1,6 @@
 include: **/*.ts2
 
-prototype(Sfi.Widgets:TextWithImage) {
+prototype(Sfi.Shared:TextWithImage) {
 	attributes.class = ${'TextWithImage ' + node.properties.variant}
 	headline = TYPO3.Neos.NodeTypes:Headline{
 		@override.node = ${q(node).children('headline').get(0)}
@@ -16,7 +16,7 @@ prototype(Sfi.Widgets:TextWithImage) {
 	}
 }
 
-prototype(Sfi.Widgets:Link) {
+prototype(Sfi.Shared:Link) {
 	attributes.class = ${node.properties.variant == 'Link-Button' ? 'LinkButton' : 'LinkInline'}
 	attributes.href = ${node.properties.target}
 	attributes.href.@process.convertUris = TYPO3.Neos:ConvertUris {
@@ -24,7 +24,7 @@ prototype(Sfi.Widgets:Link) {
 	}
 }
 
-prototype(Sfi.Widgets:ImageLink) {
+prototype(Sfi.Shared:ImageLink) {
 	attributes.class = ${'ImageLink ' + node.properties.variant}
 	maximumWidth = 300
 	maximumHeight = 250

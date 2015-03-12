@@ -1,5 +1,5 @@
 # Render element with its own object
-prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
+prototype(Sfi.Shared:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 	default{
 		condition = ${true}
 		type = ${q(node).property('_nodeType')}			
@@ -7,8 +7,8 @@ prototype(Sfi.Widgets:AutoRender) < prototype(TYPO3.TypoScript:Case) {
 }
 
 # Wrap AutoRender with tag. You can also use tag atrributes and other properties
-prototype(Sfi.Widgets:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
-	content = Sfi.Widgets:AutoRender
+prototype(Sfi.Shared:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
+	content = Sfi.Shared:AutoRender
 	tagName = 'div'
 }
 

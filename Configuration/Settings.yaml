@@ -2,7 +2,7 @@ TYPO3:
   Neos:
     typoScript:
       autoInclude:
-        'Sfi.Widgets': TRUE
+        'Sfi.Shared': TRUE
     nodeTypes:
       groups:
         contentElements:

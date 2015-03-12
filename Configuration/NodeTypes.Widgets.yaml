@@ -1,4 +1,4 @@
-'Sfi.Widgets:Carousel':
+'Sfi.Shared:Carousel':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -33,7 +33,7 @@
     nodeTypes:
       '*': TRUE
 
-'Sfi.Widgets:Sections':
+'Sfi.Shared:Sections':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -66,10 +66,10 @@
                 label: 'Pills'
   constraints:
     nodeTypes:
-      'Sfi.Widgets:Section': TRUE
-      'Sfi.Widgets:SectionWithImage': TRUE
+      'Sfi.Shared:Section': TRUE
+      'Sfi.Shared:SectionWithImage': TRUE
 
-'Sfi.Widgets:Section':
+'Sfi.Shared:Section':
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
@@ -89,9 +89,9 @@
     nodeTypes:
       '*': TRUE
 
-'Sfi.Widgets:SectionWithImage':
+'Sfi.Shared:SectionWithImage':
   superTypes:
-    - 'Sfi.Widgets:TextWithImage'
+    - 'Sfi.Shared:TextWithImage'
     - 'TYPO3.Neos.NodeTypes:Image'
   ui:
     label: 'Section with image'
