@@ -12,7 +12,7 @@
 
 <f:section name="tab">
 	<li class="Sections-Tab">
-		<a class="Sections-Anchor" href="#{node.name}">
+		<a class="Sections-Anchor" href="#tab-{node.identifier}">
 			{tab -> f:format.raw()}
 		</a>
 	</li>
@@ -20,12 +20,12 @@
 
 <f:section name="panel">
 	<div class="Sections-AccordionTitle">
-		<a href="#{node.name}" class="Sections-Anchor">
+		<a href="#tab-{node.identifier}" class="Sections-Anchor">
 			{accordion -> f:format.raw()}
 		</a>
 	</div>
 
-    <div class="Sections-Panel" id="{node.name}">
+    <div class="Sections-Panel" id="tab-{node.identifier}">
 		{panel -> f:format.raw()}
     </div>
 </f:section>
