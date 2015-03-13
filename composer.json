@@ -1,5 +1,5 @@
 {
-    "name": "sfi/widgets",
+    "name": "sfi/shared",
     "type": "typo3-flow-package",
     "description": "Various implementations of content widgets for Neos like tabs, accordion, carousel etc.",
     "require": {
