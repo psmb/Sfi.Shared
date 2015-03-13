@@ -8,7 +8,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Sfi\\Widgets": "Classes"
+            "Sfi\\Shared": "Classes"
         }
     }
 }
