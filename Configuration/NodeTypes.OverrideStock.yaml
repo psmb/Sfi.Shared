@@ -144,11 +144,12 @@
           regularExpression: '/^[a-z0-9\-]+$/i'
 
 'TYPO3.Neos.NodeTypes:Page':
+  label: '${node.properties.navTitle ? node.properties.navTitle : node.properties.title}'
   properties:
-    altTitle:
+    navTitle:
       type: string
       ui:
-        label: 'Alternative title'
+        label: 'Navigation title'
         reloadIfChanged: TRUE
         inspector:
           group: 'document'
