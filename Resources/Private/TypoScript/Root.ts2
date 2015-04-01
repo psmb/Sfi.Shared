@@ -16,8 +16,14 @@ prototype(Sfi.Shared:TextWithImage) {
 	}
 }
 
+prototype(Sfi.Shared:Asset) {
+	attributes.class = ${node.properties.variant == 'Asset-Button' ? 'Button AssetButton' : 'ButtonInline AssetInline'}
+	attributes.href = ${'asset://' + node.properties.asset.identifier}
+	attributes.href.@process.convertUris = TYPO3.Neos:ConvertUris
+}
+
 prototype(Sfi.Shared:Link) {
-	attributes.class = ${node.properties.variant == 'Link-Button' ? 'LinkButton' : 'LinkInline'}
+	attributes.class = ${node.properties.variant == 'Link-Button' ? 'Button LinkButton' : 'ButtonInline LinkInline'}
 	attributes.href = ${node.properties.target}
 	attributes.href.@process.convertUris = TYPO3.Neos:ConvertUris {
 		forceConversion = true
