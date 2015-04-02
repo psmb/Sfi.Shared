@@ -36,3 +36,15 @@
                 label: 'Image-Left'
               'Image-Right':
                 label: 'Image-Right'
+
+
+'Sfi.Shared:Well':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Well'
+    group: structure
+    inlineEditable: true
+  constraints:
+    nodeTypes:
+      '*': TRUE

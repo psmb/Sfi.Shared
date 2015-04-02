@@ -40,3 +40,11 @@ prototype(Sfi.Shared:ImageLink) {
 		forceConversion = TRUE
 	}
 }
+
+prototype(Sfi.Shared:Well) < prototype(TYPO3.TypoScript:Tag) {
+	iterator = ${iterator}
+	attributes.class = 'Well'
+	content = TYPO3.Neos:ContentCollectionRenderer
+	# Add contentElementWrapping so it would be possible to edit column's properties
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+}
