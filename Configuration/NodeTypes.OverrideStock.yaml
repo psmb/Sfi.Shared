@@ -83,6 +83,11 @@
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'TYPO3.Neos.NodeTypes:TextMixin'
+  ui:
+    inspector:
+      groups:
+        variant:
+          label: 'Variant'
   properties:
     isBlockquote:
       type: boolean
@@ -102,12 +107,18 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              '':
-                label: 'Default'
+              'Paragraph':
+                label: 'Paragraph'
               'Paragraph--Small':
                 label: 'Paragraph--Small'
               'Paragraph--Large':
                 label: 'Paragraph--Large'
+              'ParagraphAlt':
+                label: 'ParagraphAlt'
+              'ParagraphAlt--Small':
+                label: 'ParagraphAlt--Small'
+              'ParagraphAlt--Large':
+                label: 'ParagraphAlt--Large'
 
 'TYPO3.Neos:Content':
   properties:

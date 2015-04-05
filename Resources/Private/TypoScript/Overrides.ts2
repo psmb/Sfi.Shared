@@ -6,7 +6,7 @@ prototype(TYPO3.Neos.NodeTypes:Image) {
 }
 
 prototype(TYPO3.Neos.NodeTypes:Text) {
-	attributes.class = 'RteText'
+	attributes.class = ${'RteText RteText--' + q(node).property('paragraphVariant')}
 }
 
 prototype(TYPO3.Neos.NodeTypes:Headline) {

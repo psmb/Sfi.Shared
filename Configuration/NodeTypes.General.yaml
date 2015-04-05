@@ -4,6 +4,7 @@
   ui:
     label: 'Epigraph'
     icon: 'icon-edit'
+    inlineEditable: true
   properties:
     text:
       type: string
@@ -18,6 +19,7 @@
   ui:
     label: 'Note'
     icon: 'icon-edit'
+    inlineEditable: true
   properties:
     title:
       type: string
@@ -31,3 +33,18 @@
         inlineEditable: TRUE
         aloha:
           placeholder: 'Note text here'
+
+
+'Sfi.Shared:Blockquote':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Blockquote'
+  properties:
+    text:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: '<p>Blockquote text here</p>'
+          autoparagraph: TRUE
