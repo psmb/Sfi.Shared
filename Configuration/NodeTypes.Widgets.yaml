@@ -64,6 +64,8 @@
                 label: 'Vertical Tabs'
               'Sections--Pills':
                 label: 'Pills'
+              'Sections--Accordion':
+                label: 'Accordion'
   constraints:
     nodeTypes:
       'Sfi.Shared:Section': TRUE
