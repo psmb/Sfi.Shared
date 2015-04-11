@@ -21,7 +21,7 @@ prototype(Sfi.Shared:Sections) {
 prototype(Sfi.Shared:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
 	sectionName = 'to-be-set'
 	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/Sections.html'
-	node = ${q(node).get(0)}
+	node = ${node}
 }
 prototype(Sfi.Shared:SectionsTabRenderer) < prototype(Sfi.Shared:SectionsAbstractRenderer) {
 	sectionName = 'tab'
@@ -69,5 +69,17 @@ prototype(Sfi.Shared:SectionWithImage) {
 
 	content = Sfi.Shared:TextWithImage{
 		@override.node = ${q(theNode).get(0)}
+	}
+
+	@cache {
+		mode = 'cached'
+		maximumLifetime = '86400'
+		entryIdentifier {
+			node = ${node}
+		}
+		entryTags {
+			1 = ${'Node_' + documentNode.identifier}
+			2 = ${'DescendantOf_' + documentNode.identifier}
+		}
 	}
 }
