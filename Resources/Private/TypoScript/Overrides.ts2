@@ -19,3 +19,12 @@ prototype(TYPO3.Neos.NodeTypes:Headline) {
 prototype(TYPO3.Neos.NodeTypes:AssetList) {
 	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/AssetList.html'
 }
+
+prototype(TYPO3.Neos:Content) {
+	prototype(TYPO3.Neos:ContentCollection) {
+		# As we render CC inside content often, we should cache them as separae entries
+		@cache {
+			mode = 'cached'
+		}
+	}
+}
