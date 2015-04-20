@@ -25,16 +25,16 @@ prototype(Sfi.Shared:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Temp
 }
 prototype(Sfi.Shared:SectionsTabRenderer) < prototype(Sfi.Shared:SectionsAbstractRenderer) {
 	sectionName = 'tab'
-	tab = Sfi.Shared:AutoRender {
+	tab = TYPO3.Neos:ContentCase {
 		@override.section = 'tab'
 	}
 }
 prototype(Sfi.Shared:SectionsPanelRenderer) < prototype(Sfi.Shared:SectionsAbstractRenderer) {
 	sectionName = 'panel'
-	accordion = Sfi.Shared:AutoRender {
+	accordion = TYPO3.Neos:ContentCase {
 		@override.section = 'accordion'
 	}
-	panel = Sfi.Shared:AutoRender {
+	panel = TYPO3.Neos:ContentCase {
 		@override.section = 'panel'
 	}
 }

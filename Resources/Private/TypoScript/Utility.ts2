@@ -1,14 +1,6 @@
-# Render element with its own object
-prototype(Sfi.Shared:AutoRender) < prototype(TYPO3.TypoScript:Case) {
-	default{
-		condition = ${true}
-		type = ${q(node).property('_nodeType')}			
-	}
-}
-
 # Wrap AutoRender with tag. You can also use tag atrributes and other properties
 prototype(Sfi.Shared:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
-	content = Sfi.Shared:AutoRender
+	content = TYPO3.Neos:ContentCase
 	tagName = 'div'
 }
 
@@ -22,4 +14,12 @@ prototype(TYPO3.Neos:ContentCollectionRenderer) < prototype(TYPO3.TypoScript:Col
 	itemRenderer = TYPO3.Neos:ContentCase
 	itemName = 'node'
 	iterationName = 'iterator'
+}
+
+prototype(Sfi.Shared:ContentCaseShort) < prototype(TYPO3.Neos:ContentCase) {
+	default {
+		@position = 'end'
+		condition = TRUE
+		type = ${q(node).property('_nodeType.name') + 'Short'}
+	}
 }
