@@ -48,3 +48,14 @@ prototype(Sfi.Shared:Well) < prototype(TYPO3.TypoScript:Tag) {
 	# Add contentElementWrapping so it would be possible to edit column's properties
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }
+
+
+prototype(Sfi.Shared:ListByReferences) < prototype(TYPO3.TypoScript:Tag) {
+	content = TYPO3.TypoScript:Collection {
+		collection = ${q(node).property('references')}
+		itemRenderer = Sfi.Shared:ContentCaseShort
+		itemName = 'node'
+		iterationName = 'iterator'
+	}
+	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+}
