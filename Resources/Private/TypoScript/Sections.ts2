@@ -22,6 +22,7 @@ prototype(Sfi.Shared:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Temp
 	sectionName = 'to-be-set'
 	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/Sections.html'
 	node = ${node}
+	title = ${q(node).property('title')}
 }
 prototype(Sfi.Shared:SectionsTabRenderer) < prototype(Sfi.Shared:SectionsAbstractRenderer) {
 	sectionName = 'tab'
