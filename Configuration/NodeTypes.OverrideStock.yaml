@@ -120,6 +120,10 @@
               'ParagraphAlt--Large':
                 label: 'ParagraphAlt--Large'
 
+'TYPO3.Neos.NodeTypes:ContentReferences':
+  ui:
+    group: lists
+
 'TYPO3.Neos:Content':
   properties:
     _name:

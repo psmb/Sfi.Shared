@@ -11,9 +11,15 @@ TYPO3:
         contentBlocks:
           position: 110
           label: 'Content Blocks'
+        structure:
+          position: 115
+          label: 'Structure'
         contentWidgets:
           position: 120
           label: 'Content Widgets'
+        lists:
+          position: 130
+          label: 'Lists'
         system:
           position: end
           label: 'System'

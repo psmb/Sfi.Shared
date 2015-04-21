@@ -1,0 +1,21 @@
+'Sfi.Shared:ListByReferences':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'List items by references'
+    group: lists
+    inspector:
+      groups:
+        news:
+          label: 'News'
+  properties:
+    references:
+      type: references
+      ui:
+        label: 'Select items of Document type to list'
+        reloadIfChanged: TRUE
+        inspector:
+          group: news
+          editorOptions:
+            nodeTypes:
+              - 'TYPO3.Neos:Document'
