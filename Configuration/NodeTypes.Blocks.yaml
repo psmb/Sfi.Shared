@@ -13,6 +13,7 @@
     icon: 'icon-picture'
     position: 400
     group: contentBlocks
+    inlineEditable: TRUE
     inspector:
       groups:
         variant:
@@ -44,7 +45,7 @@
   ui:
     label: 'Well'
     group: structure
-    inlineEditable: true
+    inlineEditable: TRUE
   constraints:
     nodeTypes:
       '*': TRUE
