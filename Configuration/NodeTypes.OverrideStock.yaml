@@ -97,7 +97,7 @@
         inspector:
           group: 'variant'
     paragraphVariant:
-      defaultValue: ''
+      defaultValue: 'Paragraph'
       type: string
       ui:
         label: 'Paragraph variant'
