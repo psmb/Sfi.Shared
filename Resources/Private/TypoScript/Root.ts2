@@ -45,7 +45,17 @@ prototype(Sfi.Shared:Well) < prototype(TYPO3.TypoScript:Tag) {
 	iterator = ${iterator}
 	attributes.class = 'Well'
 	content = TYPO3.Neos:ContentCollectionRenderer
-	# Add contentElementWrapping so it would be possible to edit column's properties
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			node = ${node}
+			editPreviewMode = ${editPreviewMode}
+		}
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }
 
@@ -56,6 +66,17 @@ prototype(Sfi.Shared:ListByReferences) < prototype(TYPO3.TypoScript:Tag) {
 		itemRenderer = Sfi.Shared:ContentCaseShort
 		itemName = 'node'
 		iterationName = 'iterator'
+	}
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			node = ${node}
+			editPreviewMode = ${editPreviewMode}
+		}
+		entryTags {
+			1 = ${'NodeType_Sfi.News:Listable'}
+			2 = ${'Node_' + node.identifier}
+		}
 	}
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }
