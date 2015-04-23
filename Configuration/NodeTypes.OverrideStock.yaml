@@ -27,32 +27,51 @@
       type: string
       defaultValue: '<p>Enter text here</p>'
       ui:
-        inlineEditable: true
+        inlineEditable: TRUE
         aloha:
           format:
-            strong: true
-            em: true
+            strong: TRUE
+            em: TRUE
             u: false
-            sub: true
-            sup: true
-            p: true
-            h1: true
-            h2: true
-            h3: true
-            pre: true
-            removeFormat: true
+            sub: TRUE
+            sup: TRUE
+            p: TRUE
+            h1: FALSE
+            h2: TRUE
+            h3: TRUE
+            h4: TRUE
+            pre: TRUE
+            removeFormat: TRUE
           table:
-            table: true
+            table: TRUE
           list:
-            ol: true
-            ul: true
+            ol: TRUE
+            ul: TRUE
           link:
-            a: true
+            a: TRUE
+        alignment: {  }
+
+'TYPO3.Neos.NodeTypes:TitleMixin':
+  abstract: TRUE
+  properties:
+    title:
+      type: string
+      defaultValue: '<h1>Enter headline here</h1>'
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          format:
+            p: FALSE
+            h1: FALSE
+            h2: TRUE
+            h3: TRUE
+            h4: TRUE
+          link:
+            a: TRUE
+        alignment: {  }
 
 'TYPO3.Neos.NodeTypes:TextWithImage':
   abstract: TRUE
-
-
 
 # Extend Headline with subtitle
 'TYPO3.Neos.NodeTypes:Headline':
