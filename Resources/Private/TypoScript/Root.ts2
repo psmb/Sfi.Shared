@@ -41,9 +41,9 @@ prototype(Sfi.Shared:ImageLink) {
 	}
 }
 
-prototype(Sfi.Shared:Well) < prototype(TYPO3.TypoScript:Tag) {
+prototype(Sfi.Shared:Group) {
+	@class = 'TYPO3\\TypoScript\\TypoScriptObjects\\TagImplementation'
 	iterator = ${iterator}
-	attributes.class = 'Well'
 	content = TYPO3.Neos:ContentCollectionRenderer
 	@cache {
 		mode = 'cached'
@@ -56,7 +56,10 @@ prototype(Sfi.Shared:Well) < prototype(TYPO3.TypoScript:Tag) {
 			2 = ${'DescendantOf_' + node.identifier}
 		}
 	}
-	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
+}
+
+prototype(Sfi.Shared:Well) < prototype(Sfi.Shared:Group) {
+	attributes.class = 'Well'
 }
 
 
