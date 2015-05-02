@@ -16,6 +16,17 @@ prototype(Sfi.Shared:Sections) {
 		itemRenderer = Sfi.Shared:SectionsPanelRenderer
 		itemName = 'node'
 	}
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			node = ${node}
+			editPreviewMode = ${editPreviewMode}
+		}
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
 }
 
 prototype(Sfi.Shared:SectionsAbstractRenderer) < prototype(TYPO3.TypoScript:Template) {
@@ -70,17 +81,5 @@ prototype(Sfi.Shared:SectionWithImage) {
 
 	content = Sfi.Shared:TextWithImage{
 		@override.node = ${q(theNode).get(0)}
-	}
-
-	@cache {
-		mode = 'cached'
-		maximumLifetime = '86400'
-		entryIdentifier {
-			node = ${node}
-		}
-		entryTags {
-			1 = ${'Node_' + documentNode.identifier}
-			2 = ${'DescendantOf_' + documentNode.identifier}
-		}
 	}
 }

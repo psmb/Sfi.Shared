@@ -8,5 +8,16 @@ prototype(Sfi.Shared:Carousel) < prototype(TYPO3.TypoScript:Tag) {
 		attributes.class = 'Carousel-Item'
 		maximumWidth = ${responsive == '2x' ? 600 : (responsive == '3x' ? 320 : 980)}
 	}
+	@cache {
+		mode = 'cached'
+		entryIdentifier {
+			node = ${node}
+			editPreviewMode = ${editPreviewMode}
+		}
+		entryTags {
+			1 = ${'Node_' + node.identifier}
+			2 = ${'DescendantOf_' + node.identifier}
+		}
+	}
 	@process.contentElementWrapping = TYPO3.Neos:ContentElementWrapping
 }
