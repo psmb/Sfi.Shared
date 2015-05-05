@@ -143,39 +143,39 @@
   ui:
     group: lists
 
-'TYPO3.Neos:Content':
-  properties:
-    _name:
-      type: string
-      ui:
-        label: 'Name (URL)'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'type'
-      validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 255
-        regularExpression:
-          regularExpression: '/^[a-z0-9\-]+$/i'
+# 'TYPO3.Neos:Content':
+#   properties:
+#     _name:
+#       type: string
+#       ui:
+#         label: 'Name (URL)'
+#         reloadIfChanged: TRUE
+#         inspector:
+#           group: 'type'
+#       validation:
+#         'TYPO3.Neos/Validation/NotEmptyValidator': []
+#         'TYPO3.Neos/Validation/StringLengthValidator':
+#           minimum: 1
+#           maximum: 255
+#         regularExpression:
+#           regularExpression: '/^[a-z0-9\-]+$/i'
 
-'TYPO3.Neos:Document':
-  properties:
-    _name:
-      type: string
-      ui:
-        label: 'Name (URL)'
-        reloadIfChanged: TRUE
-        inspector:
-          group: 'type'
-      validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
-        'TYPO3.Neos/Validation/StringLengthValidator':
-          minimum: 1
-          maximum: 255
-        regularExpression:
-          regularExpression: '/^[a-z0-9\-]+$/i'
+# 'TYPO3.Neos:Document':
+#   properties:
+#     _name:
+#       type: string
+#       ui:
+#         label: 'Name (URL)'
+#         reloadIfChanged: TRUE
+#         inspector:
+#           group: 'type'
+#       validation:
+#         'TYPO3.Neos/Validation/NotEmptyValidator': []
+#         'TYPO3.Neos/Validation/StringLengthValidator':
+#           minimum: 1
+#           maximum: 255
+#         regularExpression:
+#           regularExpression: '/^[a-z0-9\-]+$/i'
 
 'TYPO3.Neos.NodeTypes:Page':
   label: '${node.properties.navTitle ? node.properties.navTitle : node.properties.title}'
