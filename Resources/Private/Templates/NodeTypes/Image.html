@@ -1,7 +1,6 @@
 {namespace neos=TYPO3\Neos\ViewHelpers}
 {namespace media=TYPO3\Media\ViewHelpers}
 <div{attributes -> f:format.raw()}>
-
 	<figure{f:if(condition: imageClassName, then: ' class="{imageClassName}"')}>
 		<f:if condition="{image}">
 			<f:then>
@@ -28,14 +27,10 @@
 				</f:if>
 			</f:then>
 			<f:else>
-				<f:security.ifAccess resource="TYPO3_Neos_Backend_GeneralAccess">
-					<f:if condition="{node.context.workspace.name} != 'live'">
-						<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
-					</f:if>
-				</f:security.ifAccess>
+				<f:if condition="{neos:rendering.inEditMode()}">
+					<img src="{f:uri.resource(package: 'TYPO3.Neos', path: 'Images/dummy-image.svg')}" title="Dummy image" alt="Dummy image" class="neos-handle" />
+				</f:if>
 			</f:else>
 		</f:if>
-		
 	</figure>
-
 </div>
