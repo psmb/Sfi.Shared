@@ -4,18 +4,6 @@ prototype(Sfi.Shared:AutoRenderWithTag) < prototype(TYPO3.TypoScript:Tag) {
 	tagName = 'div'
 }
 
-# This is a helper TypoScript object which is used to render all of the child elements
-# of a current node.
-prototype(TYPO3.Neos:ContentCollectionRenderer) < prototype(TYPO3.TypoScript:Collection) {
-	# Set context removedContentShown to get removed nodes too.
-	# Needed for publish function to be able to publish removed nodes.
-	collection = ${q(node).context({'removedContentShown': true}).children()}
-	# Render every item by its own TS object
-	itemRenderer = TYPO3.Neos:ContentCase
-	itemName = 'node'
-	iterationName = 'iterator'
-}
-
 prototype(Sfi.Shared:ContentCaseShort) < prototype(TYPO3.Neos:ContentCase) {
 	default {
 		@position = 'end'
