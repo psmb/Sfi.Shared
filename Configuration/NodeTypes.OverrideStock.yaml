@@ -191,3 +191,13 @@
         'TYPO3.Neos/Validation/StringLengthValidator':
           minimum: 1
           maximum: 255
+
+
+'TYPO3.Neos:Content':
+  properties:
+    searchid:
+      type: string
+      ui:
+        label: 'Идентификатор для поиска'
+        inspector:
+          group: 'nodeInfo'
