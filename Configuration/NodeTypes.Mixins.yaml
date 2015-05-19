@@ -1,0 +1,17 @@
+'Sfi.Shared:TagMixin':
+  abstract: true
+  ui:
+    inspector:
+      groups:
+        tag:
+          label: 'Tag'
+          position: 1
+  properties:
+    replaceVariants:
+      type: string
+      ui:
+        label: 'Варианты написания'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'tag'
+          position: 10

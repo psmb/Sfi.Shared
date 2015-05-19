@@ -1,0 +1,6 @@
+prototype(Sfi.Shared:ReplaceTags) {
+	@class = 'Sfi\\Shared\\TypoScript\\ReplaceTagsImplementation'
+	value = ${value}
+	node = ${node}
+	tags = ${q(site).find('[instanceof Sfi.Shared:TagMixin]').get()}
+}
