@@ -7,6 +7,13 @@
           label: 'Tag'
           position: 1
   properties:
+    linkToTag:
+      type: boolean
+      ui:
+        label: 'Делать ссылки на этот тэг'
+        reloadIfChanged: FALSE
+        inspector:
+          group: 'tag'
     replaceVariants:
       type: string
       ui:

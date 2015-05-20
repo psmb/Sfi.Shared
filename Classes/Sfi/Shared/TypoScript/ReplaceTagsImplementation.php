@@ -29,6 +29,7 @@ class ReplaceTagsImplementation extends AbstractTypoScriptObject {
 		$text = $this->tsValue('value');
 		$tags = $this->tsValue('tags');
 		$node = $this->tsValue('node');
+		$documentNode = $this->tsValue('documentNode');
 		if ($text === '' || $text === NULL) {
 			return '';
 		}
@@ -40,17 +41,16 @@ class ReplaceTagsImplementation extends AbstractTypoScriptObject {
 		}
 		$linkingService = $this->linkingService;
 		$controllerContext = $this->tsRuntime->getControllerContext();
+
 		foreach ($tags as $tag) {
-			$replacementVariants = array();
-			if ($tag->getProperty('replaceVariants')) {
+			if ($tag->getProperty('replaceVariants') && ($tag != $documentNode)) {
 				$replacementVariants = explode(',', $tag->getProperty('replaceVariants'));
-			}
-			$replacementVariants[] = $tag->getProperty('title');
-			foreach ($replacementVariants as $replacementVariant) {
-				$replacementVariant = trim($replacementVariant);
-				if (strpos($text, $replacementVariant) !== false) {
-					$tagUri = $linkingService->createNodeUri($controllerContext, $tag);
-					$text = str_replace($replacementVariant, '<a href="' . $tagUri . '">' . $replacementVariant . '</a>', $text);
+				foreach ($replacementVariants as $replacementVariant) {
+					$replacementVariant = trim($replacementVariant);
+					if (strpos($text, $replacementVariant) !== false) {
+						$tagUri = $linkingService->createNodeUri($controllerContext, $tag);
+						$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $tagUri . '">$1</a>', $text);
+					}
 				}
 			}
 		}
