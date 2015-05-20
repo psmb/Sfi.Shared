@@ -13,7 +13,7 @@ prototype(TYPO3.Neos.NodeTypes:Text) {
 prototype(TYPO3.Neos.NodeTypes:Headline) {
 	templatePath = 'resource://Sfi.Shared/Private/Templates/NodeTypes/Headline.html'
 	attributes.id = ${q(node).property('_name')}
-	attributes.class = 'RteText'
+	attributes.class = 'RteText HeadingAnchor js-anchor'
 }
 
 # TODO: implement it the write way
