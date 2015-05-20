@@ -1,0 +1,27 @@
+# Set flag that we are in rawContentMode
+rawContent.@override.rawContentMode = ${true}
+
+prototype(Sfi.Shared:RawContentChildNodes) < prototype(TYPO3.TypoScript:Template) {
+	templatePath = 'resource://TYPO3.Neos/Private/Templates/RawContentMode/TypoScriptObjects/GeneralContentCollectionRendering.html'
+	columns = TYPO3.TypoScript:Collection {
+		collection = ${q(node).children()}
+		itemName = 'node'
+		itemRenderer = TYPO3.TypoScript:Template {
+			templatePath = 'resource://TYPO3.Neos/Private/Templates/RawContentMode/TypoScriptObjects/ContentCollectionTemplate.html'
+			node = ${node}
+			attributes = TYPO3.TypoScript:Attributes {
+				class = 'column'
+			}
+			columnContent = TYPO3.Neos:ContentCase
+
+		}
+	}
+}
+
+prototype(TYPO3.Neos:Document) {
+	templatePath.@process.rawContent = ${rawContentMode ? 'resource://Sfi.Shared/Private/Templates/RawContentMode/NodeProperties.html' : value}
+	nodeProperties = ${NodeTypeConfiguration.getNodeType(q(node).property('_nodeType').name).localConfiguration.properties}
+	nodeProperties.@if.isRaw = ${rawContentMode}
+	@override.rawContent = Sfi.Shared:RawContentChildNodes
+	@process.rawContentMode = ${rawContentMode ? value + rawContent : value}
+}

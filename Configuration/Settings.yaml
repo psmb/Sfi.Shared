@@ -23,3 +23,6 @@ TYPO3:
         system:
           position: end
           label: 'System'
+  TypoScript:
+    defaultContext:
+      NodeTypeConfiguration: 'Sfi\Shared\TypoScript\Eel\Helper\NodeTypeConfigurationHelper'
