@@ -15,6 +15,13 @@ prototype(Sfi.Shared:RawContentChildNodes) < prototype(TYPO3.TypoScript:Template
 	@if.inBackend = ${rawContent && documentNode.context.inBackend}
 }
 
+# Render with own type
+rawContent.body.allContentCollections = PrimaryContent {
+	renderByType {
+		condition = TRUE
+		type = ${q(node).property('_nodeType.name')}
+	}
+}
 # Set flag that we are in rawContentMode
 rawContent.@override.rawContentMode = ${true}
 rawContent.@override.rawContentChildNodes = Sfi.Shared:RawContentChildNodes
