@@ -64,9 +64,16 @@ prototype(Sfi.Shared:Well) < prototype(Sfi.Shared:Group) {
 
 
 prototype(Sfi.Shared:ListByReferences) < prototype(TYPO3.TypoScript:Tag) {
+	@override.itemRendererType = ${q(node).property('itemRenderer')}
 	content = TYPO3.TypoScript:Collection {
 		collection = ${q(node).property('references')}
-		itemRenderer = Sfi.Shared:ContentCaseShort
+		itemRenderer = Sfi.Shared:ContentCaseShort {
+			byType {
+				@position = 'start'
+				condition = ${itemRendererType}
+				type = ${itemRendererType}
+			}
+		}
 		itemName = 'node'
 		iterationName = 'iterator'
 	}

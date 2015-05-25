@@ -2,7 +2,7 @@
   superTypes:
     - 'TYPO3.Neos:Content'
   ui:
-    label: 'List items by references'
+    label: 'Insert document references'
     group: lists
     inspector:
       groups:
@@ -19,3 +19,11 @@
           editorOptions:
             nodeTypes:
               - 'TYPO3.Neos:Document'
+    itemRenderer:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'itemRenderer'
+        reloadIfChanged: true
+        inspector:
+          group: 'news'
