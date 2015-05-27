@@ -193,7 +193,7 @@
           maximum: 255
 
 
-'TYPO3.Neos:Content':
+'TYPO3.Neos:Node':
   properties:
     searchid:
       type: string
