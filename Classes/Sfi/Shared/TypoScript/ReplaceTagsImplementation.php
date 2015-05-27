@@ -47,8 +47,13 @@ class ReplaceTagsImplementation extends AbstractTypoScriptObject {
 				$replacementVariants = explode(',', $tag->getProperty('replaceVariants'));
 				foreach ($replacementVariants as $replacementVariant) {
 					$replacementVariant = trim($replacementVariant);
-					if (strpos($text, $replacementVariant) !== false) {
+					// Define "plus" as a specila symbol to mark word base
+					$replacementVariant = str_replace('+', '.*?', $replacementVariant);
+					// Match any number of spaces
+					$replacementVariant = str_replace(' ', '\s*', $replacementVariant);
+					if (preg_match('/' . $replacementVariant . '/ui', $text) !== false) {
 						$tagUri = $linkingService->createNodeUri($controllerContext, $tag);
+						// Match not within links
 						$text = preg_replace('/(?!(?:[^<]+>|[^>]+<\/a>))\b(' . $replacementVariant . ')\b/ui', '<a href="' . $tagUri . '">$1</a>', $text);
 					}
 				}
