@@ -3,5 +3,6 @@ prototype(Sfi.Shared:ReplaceTags) {
 	value = ${value}
 	node = ${node}
 	documentNode = ${documentNode}
-	tags = ${q(site).find('[instanceof Sfi.Shared:TagMixin]').filter('[linkToTag = TRUE]').get()}
+	tags = ${q(site).find('[instanceof Sfi.Shared:TagMixin]').filter('[replaceVariants][replaceVariants != ""]').get()}
+	
 }
