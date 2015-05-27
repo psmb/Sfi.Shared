@@ -201,3 +201,7 @@
         label: 'Идентификатор для поиска'
         inspector:
           group: 'nodeInfo'
+
+'TYPO3.Neos:ContentCollection':
+  superTypes:
+    'TYPO3.Neos:Content': TRUE
