@@ -19,10 +19,8 @@
 </f:section>
 
 <f:section name="panel">
-	<a href="#tab-{node.identifier}" class="Sections-Anchor">
-		<div class="Sections-AccordionTitle">
-				{accordion -> f:format.raw()}
-		</div>
+	<a href="#tab-{node.identifier}" class="Sections-Anchor Sections-AccordionTitle">
+		{accordion -> f:format.raw()}
 	</a>
 
     <div class="Sections-Panel" id="tab-{node.identifier}">
