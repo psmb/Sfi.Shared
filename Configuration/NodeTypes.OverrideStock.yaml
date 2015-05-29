@@ -205,3 +205,14 @@
 'TYPO3.Neos:ContentCollection':
   superTypes:
     'TYPO3.Neos:Content': TRUE
+
+'TYPO3.Neos:Shortcut':
+  properties:
+    targetMode:
+      defaultValue: 'noShortcut'
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              noShortcut:
+                label: 'No shortcut'
