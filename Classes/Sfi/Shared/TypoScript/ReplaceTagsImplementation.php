@@ -48,7 +48,7 @@ class ReplaceTagsImplementation extends AbstractTypoScriptObject {
 				foreach ($replacementVariants as $replacementVariant) {
 					$replacementVariant = trim($replacementVariant);
 					// Define "plus" as a specila symbol to mark word base
-					$replacementVariant = str_replace('+', '.*?', $replacementVariant);
+					$replacementVariant = str_replace('+', '\w*?', $replacementVariant);
 					// Match any number of spaces
 					$replacementVariant = str_replace(' ', '\s*', $replacementVariant);
 					if (preg_match('/' . $replacementVariant . '/ui', $text) !== false) {
