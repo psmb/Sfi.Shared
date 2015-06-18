@@ -139,3 +139,31 @@
                 label: 'Button'
               'Asset-Inline':
                 label: 'Inline'
+
+
+'Sfi.Shared:AudioAsset':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Аудио файл'
+    icon: 'icon-edit'
+    group: contentElements
+    inspector:
+      groups:
+        asset:
+          label: 'Аудио файл'
+          position: 'start 1'
+  properties:
+    title:
+      type: string
+      ui:
+        label: 'Подпись аудиозаписи'
+        inspector:
+          group: asset
+    asset:
+      type: TYPO3\Media\Domain\Model\Asset
+      ui:
+        inspector:
+          group: 'asset'
+        label: 'Аудио файл'
+        reloadIfChanged: TRUE
