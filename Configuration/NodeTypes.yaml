@@ -1,3 +1,47 @@
+'Sfi.Widgets:Asset':
+  superTypes:
+    - 'TYPO3.Neos:Content'
+  ui:
+    label: 'Asset'
+    group: 'contentWidgets'
+    icon: 'icon-edit'
+    inspector:
+      groups:
+        asset:
+          label: 'Asset'
+          position: 'start 1'
+  properties:
+    title:
+      type: string
+      ui:
+        inlineEditable: TRUE
+        aloha:
+          placeholder: 'Enter asset name'
+    asset:
+      type: TYPO3\Media\Domain\Model\Asset
+      ui:
+        inspector:
+          group: 'asset'
+        label: 'Assets'
+        reloadIfChanged: TRUE
+    variant:
+      defaultValue: 'Asset-Button'
+      type: string
+      ui:
+        label: 'Asset variant'
+        reloadIfChanged: true
+        inspector:
+          group: asset
+          editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
+          editorOptions:
+            values:
+              'Button--Light':
+                label: 'Button Light'
+              'Button--Dark':
+                label: 'Button Dark'
+              'ButtonInline':
+                label: 'Inline'
+
 
 'Sfi.Widgets:Carousel':
   superTypes:
