@@ -74,6 +74,10 @@
                 label: '2x'
               '3x':
                 label: '3x'
+  constraints:
+    nodeTypes:
+      'TYPO3.Neos:Document': FALSE
+      '*': TRUE
 
 'Sfi.Widgets:Sections':
   superTypes:
@@ -101,6 +105,9 @@
                 label: 'Vertical Tabs'
               'Sections--Pills':
                 label: 'Pills'
+  constraints:
+    nodeTypes:
+      'Sfi.Widgets:Section': TRUE
 
 'Sfi.Widgets:Section':
   superTypes:
@@ -118,7 +125,10 @@
     title:
       type: string
       defaultValue: 'One more tab'
-
+  constraints:
+    nodeTypes:
+      'TYPO3.Neos:Document': FALSE
+      '*': TRUE
 
 'Sfi.Widgets:Link':
   superTypes:
