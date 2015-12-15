@@ -79,7 +79,7 @@ prototype(Sfi.Shared:SectionWithImage) {
     title = ${String.stripTags(q(theNode).children('headline').property('title'))}
     subTitle = ${q(theNode).children('headline').property('subTitle')}
 
-	content = Sfi.Shared:TextWithImage{
+	content = Sfi.Shared:TextWithImage {
 		@override.node = ${q(theNode).get(0)}
 	}
 }
