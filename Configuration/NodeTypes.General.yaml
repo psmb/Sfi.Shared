@@ -1,50 +1,48 @@
+
 'Sfi.Shared:Epigraph':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Epigraph'
-    icon: 'icon-edit'
+    label: Epigraph
+    icon: icon-edit
     inlineEditable: true
   properties:
     text:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: 'Epigraph text here'
-
 'Sfi.Shared:Note':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Note'
-    icon: 'icon-edit'
+    label: Note
+    icon: icon-edit
     inlineEditable: true
   properties:
     title:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: 'Note title'
     text:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: 'Note text here'
-
-
 'Sfi.Shared:Blockquote':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Blockquote'
+    label: Blockquote
   properties:
     text:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: '<p>Blockquote text here</p>'
-          autoparagraph: TRUE
+          autoparagraph: true

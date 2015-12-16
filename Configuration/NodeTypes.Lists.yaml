@@ -1,19 +1,20 @@
+
 'Sfi.Shared:ListByReferences':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Insert document references'
     group: lists
     inspector:
       groups:
         news:
-          label: 'News'
+          label: News
   properties:
     references:
       type: references
       ui:
         label: 'Select items of Document type to list'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: news
           editorOptions:
@@ -23,7 +24,7 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'itemRenderer'
+        label: itemRenderer
         reloadIfChanged: true
         inspector:
-          group: 'news'
+          group: news

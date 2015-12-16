@@ -1,11 +1,12 @@
+
 'Sfi.Shared:Carousel':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Carousel'
-    group: 'contentWidgets'
+    label: Carousel
+    group: contentWidgets
     inlineEditable: true
-    icon: 'icon-chevron-right'
+    icon: icon-chevron-right
     inspector:
       groups:
         carousel:
@@ -13,7 +14,7 @@
           position: 5
   properties:
     responsive:
-      defaultValue: '1x'
+      defaultValue: 1x
       type: string
       ui:
         label: 'Number of slides on desktop'
@@ -23,22 +24,21 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              '1x':
-                label: '1x'
-              '2x':
-                label: '2x'
-              '3x':
-                label: '3x'
+              1x:
+                label: 1x
+              2x:
+                label: 2x
+              3x:
+                label: 3x
   constraints:
     nodeTypes:
-      '*': TRUE
-
+      '*': true
 'Sfi.Shared:Sections':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Section container'
-    icon: 'icon-ellipsis-horizontal'
+    icon: icon-ellipsis-horizontal
     group: contentWidgets
     inlineEditable: true
     inspector:
@@ -48,7 +48,7 @@
           position: 5
   properties:
     layout:
-      defaultValue: 'Sections--Tabs'
+      defaultValue: Sections--Tabs
       type: string
       ui:
         label: 'Section layout'
@@ -58,24 +58,23 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Sections--Tabs':
-                label: 'Tabs'
-              'Sections--VerticalTabs':
+              Sections--Tabs:
+                label: Tabs
+              Sections--VerticalTabs:
                 label: 'Vertical Tabs'
-              'Sections--Pills':
-                label: 'Pills'
-              'Sections--Accordion':
-                label: 'Accordion'
+              Sections--Pills:
+                label: Pills
+              Sections--Accordion:
+                label: Accordion
   constraints:
     nodeTypes:
-      'Sfi.Shared:Section': TRUE
-      'Sfi.Shared:SectionWithImage': TRUE
-
+      'Sfi.Shared:Section': true
+      'Sfi.Shared:SectionWithImage': true
 'Sfi.Shared:Section':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Section'
+    label: Section
     group: contentWidgets
     inlineEditable: true
     inspector:
@@ -89,26 +88,25 @@
       defaultValue: 'One more tab'
   constraints:
     nodeTypes:
-      '*': TRUE
-
+      '*': true
 'Sfi.Shared:SectionWithImage':
   superTypes:
-    - 'Sfi.Shared:TextWithImage'
-    - 'TYPO3.Neos.NodeTypes:Image'
+    'Sfi.Shared:TextWithImage': true
+    'TYPO3.Neos.NodeTypes:Image': true
   ui:
     label: 'Section with image'
     group: contentWidgets
-    icon: 'icon-edit'
+    icon: icon-edit
   properties:
     anchorImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Anchor Image'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'image'
+          group: image
     sectionVariant:
-      defaultValue: 'SectionWithImageVariant1'
+      defaultValue: SectionWithImageVariant1
       type: string
       ui:
         label: 'Section variant'
@@ -118,7 +116,7 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'SectionWithImageVariant1':
+              SectionWithImageVariant1:
                 label: 'Variant 1'
-              'SectionWithImageVariant2':
+              SectionWithImageVariant2:
                 label: 'Variant 2'

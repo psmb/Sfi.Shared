@@ -1,16 +1,16 @@
+
 'Sfi.Shared:Group':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Group'
+    label: Group
     group: structure
-    inlineEditable: TRUE
+    inlineEditable: true
   constraints:
     nodeTypes:
-      '*': TRUE
-
+      '*': true
 'Sfi.Shared:Well':
   superTypes:
-    - 'Sfi.Shared:Group'
+    'Sfi.Shared:Group': true
   ui:
-    label: 'Well'
+    label: Well

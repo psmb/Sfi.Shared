@@ -1,41 +1,42 @@
+
 'Sfi.Shared:YouTube':
-  superTypes: ['TYPO3.Neos:Content']
+  superTypes:
+    'TYPO3.Neos:Content': true
   ui:
     label: 'YouTube Video'
     group: contentElements
-    icon: 'fa-youtube'
+    icon: fa-youtube
     inspector:
       groups:
         video:
-          label: 'Video'
+          label: Video
   properties:
     videoUrl:
       type: string
       ui:
         label: 'Normal Youtube video URL'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'video'
+          group: video
       validation:
-        'TYPO3.Neos/Validation/NotEmptyValidator': []
+        TYPO3.Neos/Validation/NotEmptyValidator: {  }
         regularExpression:
           regularExpression: '/\?v=[a-z0-9-]+/i'
-
 'Sfi.Shared:Link':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Link'
-    icon: 'icon-external-link'
+    label: Link
+    icon: icon-external-link
     group: contentElements
     inspector:
       groups:
         link:
-          label: 'Link'
+          label: Link
           position: 100
   properties:
     variant:
-      defaultValue: 'Link-Button'
+      defaultValue: Link-Button
       type: string
       ui:
         label: 'Link variant'
@@ -45,30 +46,29 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Link-Button':
-                label: 'Button'
-              'Link-Inline':
-                label: 'Inline'
+              Link-Button:
+                label: Button
+              Link-Inline:
+                label: Inline
     target:
       type: string
       ui:
         label: 'Link target'
-        reloadIfChanged: FALSE
+        reloadIfChanged: false
         inspector:
-          group: 'link'
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
     text:
       type: string
       defaultValue: 'Link text'
       ui:
-        inlineEditable: TRUE
-
+        inlineEditable: true
 'Sfi.Shared:ImageLink':
   superTypes:
-    - 'TYPO3.Neos.NodeTypes:Image'
+    'TYPO3.Neos.NodeTypes:Image': true
   ui:
     label: 'Image Link'
-    icon: 'icon-external-link'
+    icon: icon-external-link
     group: contentElements
   properties:
     variant:
@@ -82,50 +82,49 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Reserved':
-                label: 'Reserved'
+              Reserved:
+                label: Reserved
     target:
       type: string
       ui:
         label: 'Link target'
-        reloadIfChanged: FALSE
+        reloadIfChanged: false
         inspector:
-          group: 'link'
-          editor: 'TYPO3.Neos/Inspector/Editors/LinkEditor'
+          group: link
+          editor: TYPO3.Neos/Inspector/Editors/LinkEditor
     text:
       type: string
       defaultValue: 'Link text'
       ui:
-        inlineEditable: TRUE
-
+        inlineEditable: true
 'Sfi.Shared:Asset':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
-    label: 'Asset'
-    icon: 'icon-edit'
+    label: Asset
+    icon: icon-edit
     group: contentElements
     inspector:
       groups:
         asset:
-          label: 'Asset'
+          label: Asset
           position: 'start 1'
   properties:
     title:
       type: string
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           placeholder: 'Enter asset name'
     asset:
       type: TYPO3\Media\Domain\Model\Asset
       ui:
         inspector:
-          group: 'asset'
-        label: 'Assets'
-        reloadIfChanged: TRUE
+          group: asset
+        label: Assets
+        reloadIfChanged: true
     variant:
-      defaultValue: 'Asset-Button'
+      defaultValue: Asset-Button
       type: string
       ui:
         label: 'Asset variant'
@@ -135,18 +134,16 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Asset-Button':
-                label: 'Button'
-              'Asset-Inline':
-                label: 'Inline'
-
-
+              Asset-Button:
+                label: Button
+              Asset-Inline:
+                label: Inline
 'Sfi.Shared:AudioAsset':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   ui:
     label: 'Аудио файл'
-    icon: 'icon-edit'
+    icon: icon-edit
     group: contentElements
     inspector:
       groups:
@@ -164,6 +161,6 @@
       type: TYPO3\Media\Domain\Model\Asset
       ui:
         inspector:
-          group: 'asset'
+          group: asset
         label: 'Аудио файл'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true

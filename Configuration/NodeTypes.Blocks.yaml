@@ -1,6 +1,7 @@
+
 'Sfi.Shared:TextWithImage':
   superTypes:
-    - 'TYPO3.Neos:Content'
+    'TYPO3.Neos:Content': true
   childNodes:
     headline:
       type: 'TYPO3.Neos.NodeTypes:Headline'
@@ -10,18 +11,18 @@
       type: 'TYPO3.Neos.NodeTypes:Image'
   ui:
     label: 'Text with Image'
-    icon: 'icon-picture'
+    icon: icon-picture
     position: 400
     group: contentBlocks
-    inlineEditable: TRUE
+    inlineEditable: true
     inspector:
       groups:
         variant:
-          label: 'Variant'
+          label: Variant
           position: 'start 100'
   properties:
     variant:
-      defaultValue: 'Image-Top'
+      defaultValue: Image-Top
       type: string
       ui:
         label: 'TextWithImage variant'
@@ -31,9 +32,9 @@
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Image-Top':
-                label: 'Image-Top'
-              'Image-Left':
-                label: 'Image-Left'
-              'Image-Right':
-                label: 'Image-Right'
+              Image-Top:
+                label: Image-Top
+              Image-Left:
+                label: Image-Left
+              Image-Right:
+                label: Image-Right

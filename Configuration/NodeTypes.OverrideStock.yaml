@@ -69,8 +69,8 @@
   abstract: true
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:TitleMixin'
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:TitleMixin': true
   ui:
     icon: icon-font
     inspector:
@@ -92,8 +92,8 @@
           group: subtitle
 'TYPO3.Neos.NodeTypes:Text':
   superTypes:
-    - 'TYPO3.Neos:Content'
-    - 'TYPO3.Neos.NodeTypes:TextMixin'
+    'TYPO3.Neos:Content': true
+    'TYPO3.Neos.NodeTypes:TextMixin': true
   ui:
     inspector:
       groups:
@@ -157,7 +157,7 @@
           group: nodeInfo
 'TYPO3.Neos:ContentCollection':
   superTypes:
-    'TYPO3.Neos:Content': '1'
+    1: true
 'TYPO3.Neos:Shortcut':
   properties:
     targetMode:
