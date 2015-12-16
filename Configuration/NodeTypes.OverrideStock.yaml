@@ -155,9 +155,6 @@
         label: 'Идентификатор для поиска'
         inspector:
           group: nodeInfo
-'TYPO3.Neos:ContentCollection':
-  superTypes:
-    1: true
 'TYPO3.Neos:Shortcut':
   properties:
     targetMode:
