@@ -1,103 +1,95 @@
-'TYPO3.Neos:PluginView':
-  abstract: TRUE
-'TYPO3.Neos.NodeTypes:Menu':
-  abstract: TRUE
-'TYPO3.Neos.NodeTypes:Form':
-  abstract: TRUE
 
-#Adjust default styles
+'TYPO3.Neos:PluginView':
+  abstract: true
+'TYPO3.Neos.NodeTypes:Menu':
+  abstract: true
+'TYPO3.Neos.NodeTypes:Form':
+  abstract: true
 'TYPO3.Neos.NodeTypes:ImageMixin':
   properties:
     title:
       ui:
         inspector:
-          group: 'unset'
-
+          group: unset
 'TYPO3.Neos.NodeTypes:ImageAlignmentMixin':
   properties:
     alignment:
       ui:
         inspector:
-          group: 'unset'
-
+          group: unset
 'TYPO3.Neos.NodeTypes:TextMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     text:
       type: string
       defaultValue: '<p>Enter text here</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           format:
-            strong: TRUE
-            em: TRUE
+            strong: true
+            em: true
             u: false
-            sub: TRUE
-            sup: TRUE
-            p: TRUE
-            h1: FALSE
-            h2: TRUE
-            h3: TRUE
-            h4: TRUE
-            pre: TRUE
-            removeFormat: TRUE
+            sub: true
+            sup: true
+            p: true
+            h1: false
+            h2: true
+            h3: true
+            h4: true
+            pre: true
+            removeFormat: true
           table:
-            table: TRUE
+            table: true
           list:
-            ol: TRUE
-            ul: TRUE
+            ol: true
+            ul: true
           link:
-            a: TRUE
+            a: true
         alignment: {  }
-
 'TYPO3.Neos.NodeTypes:TitleMixin':
-  abstract: TRUE
+  abstract: true
   properties:
     title:
       type: string
       defaultValue: '<h1>Enter headline here</h1>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
         aloha:
           format:
-            p: FALSE
-            h1: FALSE
-            h2: TRUE
-            h3: TRUE
-            h4: TRUE
+            p: false
+            h1: false
+            h2: true
+            h3: true
+            h4: true
           link:
-            a: TRUE
+            a: true
         alignment: {  }
-
 'TYPO3.Neos.NodeTypes:TextWithImage':
-  abstract: TRUE
-
-# Extend Headline with subtitle
+  abstract: true
 'TYPO3.Neos.NodeTypes:Headline':
   superTypes:
     - 'TYPO3.Neos:Content'
     - 'TYPO3.Neos.NodeTypes:TitleMixin'
   ui:
-    icon: 'icon-font'
+    icon: icon-font
     inspector:
       groups:
         subtitle:
-          label: 'Subtitle'
+          label: Subtitle
   properties:
     subTitle:
       type: string
       defaultValue: '<p>Subtitle</p>'
       ui:
-        inlineEditable: TRUE
+        inlineEditable: true
     hasSubTitle:
       type: boolean
       ui:
         label: 'Enable subTitle'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'subtitle'
-
+          group: subtitle
 'TYPO3.Neos.NodeTypes:Text':
   superTypes:
     - 'TYPO3.Neos:Content'
@@ -106,77 +98,41 @@
     inspector:
       groups:
         variant:
-          label: 'Variant'
+          label: Variant
   properties:
     isBlockquote:
       type: boolean
       ui:
-        label: 'Blockquote'
-        reloadIfChanged: TRUE
+        label: Blockquote
+        reloadIfChanged: true
         inspector:
-          group: 'variant'
+          group: variant
     paragraphVariant:
-      defaultValue: 'Paragraph'
+      defaultValue: Paragraph
       type: string
       ui:
         label: 'Paragraph variant'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
           group: variant
           editor: TYPO3.Neos/Inspector/Editors/SelectBoxEditor
           editorOptions:
             values:
-              'Paragraph':
-                label: 'Paragraph'
-              'Paragraph--Small':
-                label: 'Paragraph--Small'
-              'Paragraph--Large':
-                label: 'Paragraph--Large'
-              'ParagraphAlt':
-                label: 'ParagraphAlt'
-              'ParagraphAlt--Small':
-                label: 'ParagraphAlt--Small'
-              'ParagraphAlt--Large':
-                label: 'ParagraphAlt--Large'
-
+              Paragraph:
+                label: Paragraph
+              Paragraph--Small:
+                label: Paragraph--Small
+              Paragraph--Large:
+                label: Paragraph--Large
+              ParagraphAlt:
+                label: ParagraphAlt
+              ParagraphAlt--Small:
+                label: ParagraphAlt--Small
+              ParagraphAlt--Large:
+                label: ParagraphAlt--Large
 'TYPO3.Neos.NodeTypes:ContentReferences':
   ui:
     group: lists
-
-# 'TYPO3.Neos:Content':
-#   properties:
-#     _name:
-#       type: string
-#       ui:
-#         label: 'Name (URL)'
-#         reloadIfChanged: TRUE
-#         inspector:
-#           group: 'type'
-#       validation:
-#         'TYPO3.Neos/Validation/NotEmptyValidator': []
-#         'TYPO3.Neos/Validation/StringLengthValidator':
-#           minimum: 1
-#           maximum: 255
-#         regularExpression:
-#           regularExpression: '/^[a-z0-9\-]+$/i'
-
-# 'TYPO3.Neos:Document':
-#   properties:
-#     _name:
-#       type: string
-#       ui:
-#         label: 'Name (URL)'
-#         reloadIfChanged: TRUE
-#         inspector:
-#           group: 'type'
-#       validation:
-#         'TYPO3.Neos/Validation/NotEmptyValidator': []
-#         'TYPO3.Neos/Validation/StringLengthValidator':
-#           minimum: 1
-#           maximum: 255
-#         regularExpression:
-#           regularExpression: '/^[a-z0-9\-]+$/i'
-
 'TYPO3.Neos.NodeTypes:Page':
   label: '${node.properties.navTitle ? node.properties.navTitle : node.properties.title}'
   properties:
@@ -184,15 +140,13 @@
       type: string
       ui:
         label: 'Navigation title'
-        reloadIfChanged: TRUE
+        reloadIfChanged: true
         inspector:
-          group: 'document'
+          group: document
       validation:
-        'TYPO3.Neos/Validation/StringLengthValidator':
+        TYPO3.Neos/Validation/StringLengthValidator:
           minimum: 1
           maximum: 255
-
-
 'TYPO3.Neos:Node':
   properties:
     searchid:
@@ -200,16 +154,14 @@
       ui:
         label: 'Идентификатор для поиска'
         inspector:
-          group: 'nodeInfo'
-
+          group: nodeInfo
 'TYPO3.Neos:ContentCollection':
   superTypes:
-    'TYPO3.Neos:Content': TRUE
-
+    'TYPO3.Neos:Content': '1'
 'TYPO3.Neos:Shortcut':
   properties:
     targetMode:
-      defaultValue: 'noShortcut'
+      defaultValue: noShortcut
       ui:
         inspector:
           editorOptions:
