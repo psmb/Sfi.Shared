@@ -108,7 +108,6 @@
       groups:
         asset:
           label: Asset
-          position: 'start 1'
   properties:
     title:
       type: string
@@ -149,7 +148,6 @@
       groups:
         asset:
           label: 'Аудио файл'
-          position: 'start 1'
   properties:
     title:
       type: string

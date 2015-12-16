@@ -19,7 +19,6 @@
       groups:
         variant:
           label: Variant
-          position: 'start 100'
   properties:
     variant:
       defaultValue: Image-Top
