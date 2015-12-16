@@ -101,7 +101,7 @@
     icon: 'icon-edit'
   properties:
     anchorImage:
-      type: TYPO3\Media\Domain\Model\ImageVariant
+      type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
         label: 'Anchor Image'
         reloadIfChanged: TRUE
