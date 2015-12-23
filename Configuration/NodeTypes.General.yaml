@@ -3,7 +3,7 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Epigraph
+    label: Эпиграф
     icon: icon-edit
     inlineEditable: true
   properties:
@@ -12,12 +12,12 @@
       ui:
         inlineEditable: true
         aloha:
-          placeholder: 'Epigraph text here'
+          placeholder: 'Текст к эпиграфу'
 'Sfi.Shared:Note':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Note
+    label: Примечание
     icon: icon-edit
     inlineEditable: true
   properties:
@@ -26,23 +26,23 @@
       ui:
         inlineEditable: true
         aloha:
-          placeholder: 'Note title'
+          placeholder: 'Заголовок примечания'
     text:
       type: string
       ui:
         inlineEditable: true
         aloha:
-          placeholder: 'Note text here'
+          placeholder: 'Текст примечания'
 'Sfi.Shared:Blockquote':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Blockquote
+    label: Цитата
   properties:
     text:
       type: string
       ui:
         inlineEditable: true
         aloha:
-          placeholder: '<p>Blockquote text here</p>'
+          placeholder: '<p>Текст цитаты</p>'
           autoparagraph: true

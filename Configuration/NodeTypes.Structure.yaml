@@ -3,7 +3,7 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Group
+    label: Группа
     group: structure
     inlineEditable: true
   constraints:
@@ -13,4 +13,4 @@
   superTypes:
     'Sfi.Shared:Group': true
   ui:
-    label: Well
+    label: Корзинка

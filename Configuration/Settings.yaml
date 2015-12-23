@@ -7,22 +7,22 @@ TYPO3:
       groups:
         contentElements:
           position: 105
-          label: 'Content Elements'
+          label: 'Элемент контента'
         contentBlocks:
           position: 110
-          label: 'Content Blocks'
+          label: 'Блоки контента'
         structure:
           position: 115
-          label: 'Structure'
+          label: 'Структура'
         contentWidgets:
           position: 120
-          label: 'Content Widgets'
+          label: 'Виджеты'
         lists:
           position: 130
-          label: 'Lists'
+          label: 'Списки'
         system:
           position: end
-          label: 'System'
+          label: 'Системные'
   TypoScript:
     defaultContext:
       NodeTypeConfiguration: 'Sfi\Shared\TypoScript\Eel\Helper\NodeTypeConfigurationHelper'

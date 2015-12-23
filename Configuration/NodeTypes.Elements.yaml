@@ -3,7 +3,7 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: 'YouTube Video'
+    label: 'Видео YouTube'
     group: contentElements
     icon: fa-youtube
     inspector:
@@ -14,7 +14,7 @@
     videoUrl:
       type: string
       ui:
-        label: 'Normal Youtube video URL'
+        label: 'Обычная ссылка на видео YouTube'
         reloadIfChanged: true
         inspector:
           group: video
@@ -26,20 +26,20 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Link
+    label: Ссылка
     icon: icon-external-link
     group: contentElements
     inspector:
       groups:
         link:
-          label: Link
+          label: Ссылка
           position: 100
   properties:
     variant:
       defaultValue: Link-Button
       type: string
       ui:
-        label: 'Link variant'
+        label: 'Вариант ссылки'
         reloadIfChanged: true
         inspector:
           group: link
@@ -47,27 +47,27 @@
           editorOptions:
             values:
               Link-Button:
-                label: Button
+                label: Ссылка-кнопка
               Link-Inline:
-                label: Inline
+                label: Строчкая ссылка
     target:
       type: string
       ui:
-        label: 'Link target'
+        label: 'Адрес ссылки'
         reloadIfChanged: false
         inspector:
           group: link
           editor: TYPO3.Neos/Inspector/Editors/LinkEditor
     text:
       type: string
-      defaultValue: 'Link text'
+      defaultValue: 'Текс ссылки'
       ui:
         inlineEditable: true
 'Sfi.Shared:ImageLink':
   superTypes:
     'TYPO3.Neos.NodeTypes:Image': true
   ui:
-    label: 'Image Link'
+    label: 'Ссылка с картинкой'
     icon: icon-external-link
     group: contentElements
   properties:
@@ -75,7 +75,7 @@
       defaultValue: ''
       type: string
       ui:
-        label: 'Link variant'
+        label: 'Вариант ссылки'
         reloadIfChanged: true
         inspector:
           group: link
@@ -87,34 +87,34 @@
     target:
       type: string
       ui:
-        label: 'Link target'
+        label: 'Адрес ссылки'
         reloadIfChanged: false
         inspector:
           group: link
           editor: TYPO3.Neos/Inspector/Editors/LinkEditor
     text:
       type: string
-      defaultValue: 'Link text'
+      defaultValue: 'Текст ссылки'
       ui:
         inlineEditable: true
 'Sfi.Shared:Asset':
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Asset
+    label: Файл
     icon: icon-edit
     group: contentElements
     inspector:
       groups:
         asset:
-          label: Asset
+          label: Файл
   properties:
     title:
       type: string
       ui:
         inlineEditable: true
         aloha:
-          placeholder: 'Enter asset name'
+          placeholder: 'Введите подпись к файлу'
     asset:
       type: TYPO3\Media\Domain\Model\Asset
       ui:
@@ -126,7 +126,7 @@
       defaultValue: Asset-Button
       type: string
       ui:
-        label: 'Asset variant'
+        label: 'Вариант отображения файла'
         reloadIfChanged: true
         inspector:
           group: asset
@@ -134,9 +134,9 @@
           editorOptions:
             values:
               Asset-Button:
-                label: Button
+                label: Кнопкой
               Asset-Inline:
-                label: Inline
+                label: Строчной
 'Sfi.Shared:AudioAsset':
   superTypes:
     'TYPO3.Neos:Content': true

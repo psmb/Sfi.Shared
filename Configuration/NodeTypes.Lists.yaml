@@ -3,7 +3,7 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: 'Insert document references'
+    label: 'Вставка страниц'
     group: lists
     inspector:
       groups:
@@ -13,7 +13,7 @@
     references:
       type: references
       ui:
-        label: 'Select items of Document type to list'
+        label: 'Выберите элементы типа Документ'
         reloadIfChanged: true
         inspector:
           group: news

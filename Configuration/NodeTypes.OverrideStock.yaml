@@ -22,7 +22,7 @@
   properties:
     text:
       type: string
-      defaultValue: '<p>Enter text here</p>'
+      defaultValue: '<p>Введите текст</p>'
       ui:
         inlineEditable: true
         aloha:
@@ -52,7 +52,7 @@
   properties:
     title:
       type: string
-      defaultValue: '<h1>Enter headline here</h1>'
+      defaultValue: '<h2>Заголовок</h2>'
       ui:
         inlineEditable: true
         aloha:
@@ -76,17 +76,17 @@
     inspector:
       groups:
         subtitle:
-          label: Subtitle
+          label: Подзаголовок
   properties:
     subTitle:
       type: string
-      defaultValue: '<p>Subtitle</p>'
+      defaultValue: '<p>Подзаголовок</p>'
       ui:
         inlineEditable: true
     hasSubTitle:
       type: boolean
       ui:
-        label: 'Enable subTitle'
+        label: 'Включить подзаголовок'
         reloadIfChanged: true
         inspector:
           group: subtitle
@@ -98,12 +98,12 @@
     inspector:
       groups:
         variant:
-          label: Variant
+          label: Вариант
   properties:
     isBlockquote:
       type: boolean
       ui:
-        label: Blockquote
+        label: Является цитатой
         reloadIfChanged: true
         inspector:
           group: variant
@@ -111,7 +111,7 @@
       defaultValue: Paragraph
       type: string
       ui:
-        label: 'Paragraph variant'
+        label: 'Вариант параграфа'
         reloadIfChanged: true
         inspector:
           group: variant
@@ -119,17 +119,17 @@
           editorOptions:
             values:
               Paragraph:
-                label: Paragraph
+                label: Средний
               Paragraph--Small:
-                label: Paragraph--Small
+                label: Маленький
               Paragraph--Large:
-                label: Paragraph--Large
+                label: Большой
               ParagraphAlt:
-                label: ParagraphAlt
+                label: Альтернативный средний
               ParagraphAlt--Small:
-                label: ParagraphAlt--Small
+                label: Альтернативный маленький
               ParagraphAlt--Large:
-                label: ParagraphAlt--Large
+                label: Альтернативный большой
 'TYPO3.Neos.NodeTypes:ContentReferences':
   ui:
     group: lists
@@ -139,7 +139,7 @@
     navTitle:
       type: string
       ui:
-        label: 'Navigation title'
+        label: 'Название в меню'
         reloadIfChanged: true
         inspector:
           group: document
@@ -166,4 +166,4 @@
           editorOptions:
             values:
               noShortcut:
-                label: 'No shortcut'
+                label: 'Нет ссылки'

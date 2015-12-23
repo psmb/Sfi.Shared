@@ -3,21 +3,21 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Carousel
+    label: Карусель
     group: contentWidgets
     inlineEditable: true
     icon: icon-chevron-right
     inspector:
       groups:
         carousel:
-          label: Carousel
+          label: Карусель
           position: 5
   properties:
     responsive:
       defaultValue: 1x
       type: string
       ui:
-        label: 'Number of slides on desktop'
+        label: 'Количество слайдов бок о бок'
         reloadIfChanged: true
         inspector:
           group: carousel
@@ -37,21 +37,21 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: 'Section container'
+    label: 'Вкладки'
     icon: icon-ellipsis-horizontal
     group: contentWidgets
     inlineEditable: true
     inspector:
       groups:
         sections:
-          label: Sections
+          label: Вкладки
           position: 5
   properties:
     layout:
       defaultValue: Sections--Tabs
       type: string
       ui:
-        label: 'Section layout'
+        label: 'Вариант вкладок'
         reloadIfChanged: true
         inspector:
           group: sections
@@ -59,13 +59,13 @@
           editorOptions:
             values:
               Sections--Tabs:
-                label: Tabs
+                label: Влкадки
               Sections--VerticalTabs:
-                label: 'Vertical Tabs'
+                label: 'Вертикальные вкладки'
               Sections--Pills:
-                label: Pills
+                label: Пилюльки
               Sections--Accordion:
-                label: Accordion
+                label: Аккордион
   constraints:
     nodeTypes:
       'Sfi.Shared:Section': true
@@ -74,13 +74,13 @@
   superTypes:
     'TYPO3.Neos:Content': true
   ui:
-    label: Section
+    label: Вкладка
     group: contentWidgets
     inlineEditable: true
     inspector:
       groups:
         title:
-          label: 'Section properties'
+          label: 'Свойства вкладки'
           position: 100
   properties:
     title:
@@ -94,14 +94,14 @@
     'Sfi.Shared:TextWithImage': true
     'TYPO3.Neos.NodeTypes:Image': true
   ui:
-    label: 'Section with image'
+    label: 'Вкладка с картинкой в качестве якоря'
     group: contentWidgets
     icon: icon-edit
   properties:
     anchorImage:
       type: TYPO3\Media\Domain\Model\ImageInterface
       ui:
-        label: 'Anchor Image'
+        label: 'Картинка якоря'
         reloadIfChanged: true
         inspector:
           group: image
@@ -109,7 +109,7 @@
       defaultValue: SectionWithImageVariant1
       type: string
       ui:
-        label: 'Section variant'
+        label: 'Вариант вкладки'
         reloadIfChanged: true
         inspector:
           group: variant
@@ -117,6 +117,6 @@
           editorOptions:
             values:
               SectionWithImageVariant1:
-                label: 'Variant 1'
+                label: 'Вариант 1'
               SectionWithImageVariant2:
-                label: 'Variant 2'
+                label: 'Вариант 2'

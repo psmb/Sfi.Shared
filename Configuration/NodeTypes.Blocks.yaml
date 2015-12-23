@@ -10,7 +10,7 @@
     image:
       type: 'TYPO3.Neos.NodeTypes:Image'
   ui:
-    label: 'Text with Image'
+    label: 'Текст с картинкой'
     icon: icon-picture
     position: 400
     group: contentBlocks
@@ -18,13 +18,13 @@
     inspector:
       groups:
         variant:
-          label: Variant
+          label: Вариант
   properties:
     variant:
       defaultValue: Image-Top
       type: string
       ui:
-        label: 'TextWithImage variant'
+        label: 'Вариант текста с картинкой'
         reloadIfChanged: true
         inspector:
           group: variant
@@ -32,8 +32,8 @@
           editorOptions:
             values:
               Image-Top:
-                label: Image-Top
+                label: Картинка сверху
               Image-Left:
-                label: Image-Left
+                label: Картинка слева
               Image-Right:
-                label: Image-Right
+                label: Картинка справа
