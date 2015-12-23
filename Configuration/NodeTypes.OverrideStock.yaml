@@ -156,6 +156,8 @@
         inspector:
           group: nodeInfo
 'TYPO3.Neos:Shortcut':
+  ui:
+    icon: icon-share-alt
   properties:
     targetMode:
       defaultValue: noShortcut
